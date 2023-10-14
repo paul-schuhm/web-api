@@ -17,5 +17,6 @@ Disponible sur [ce dépôt](https://github.com/RESTful-Web-APIs/example-code).
 - Lancer la démo : 
 
 ~~~bash
-node vendor-demos-rest/YouTypeIt/server/app.js
+#A la racine du projet
+node server/app.js
 ~~~
