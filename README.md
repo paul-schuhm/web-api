@@ -1,12 +1,18 @@
 # Développement API (web API/RESTful API)
 
 - [Développement API (web API/RESTful API)](#développement-api-web-apirestful-api)
+  - [Document de suivi du module](#document-de-suivi-du-module)
   - [Démos](#démos)
     - [Démo *youtypeitwepostit*](#démo-youtypeitwepostit)
   - [Bibliographie](#bibliographie)
     - [Livres](#livres)
     - [REST et RESTful API](#rest-et-restful-api)
     - [Conception de base de données](#conception-de-base-de-données)
+
+
+## Document de suivi du module
+
+[Document collectif sur les demandes d'approfondissement et des attentes](https://eduservices-my.sharepoint.com/:w:/r/personal/paul_schuhmacher_ext_eduservices_org/_layouts/15/doc2.aspx?sourcedoc=%7B7deba3aa-d266-4a6e-980b-083aa0200ffa%7D&action=edit)
 
 
 ## Démos
