@@ -40,7 +40,7 @@ node server/app.js
 
 ### Énoncés
 
-- [Liste d'exercices sur la conception d'AI](./exercices/exercices-web-api.pdf)
+- [Liste d'exercices sur la conception de web API](./exercices/exercices-web-api.pdf)
 - [Liste d'exercices sur JS/Node.js/Express.js](./exercices/exercices-js-node-express.pdf)
 
 ### Suggestions de correction
