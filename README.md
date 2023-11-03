@@ -3,6 +3,7 @@
 - [Développement API (web API/RESTful API)](#développement-api-web-apirestful-api)
   - [Démos](#démos)
     - [Démo *youtypeitwepostit*](#démo-youtypeitwepostit)
+    - [Démo Node.js/Express.js](#démo-nodejsexpressjs)
   - [Exercices et corrections](#exercices-et-corrections)
   - [Bibliographie](#bibliographie)
     - [Livres](#livres)
@@ -28,6 +29,10 @@ Disponible sur [ce dépôt](https://github.com/RESTful-Web-APIs/example-code).
 #A la racine du projet
 node server/app.js
 ~~~
+
+### Démo Node.js/Express.js
+
+[Accéder aux démos Node.js/Express.js](./demos/)
 
 ## Exercices et corrections
 
@@ -81,6 +86,8 @@ Suggestions de lecture et de visionnage
 
 
 ### Sur les modèles de données
+
+Pour construire des *représentations* échangées entre le client et le serveur, de manière interopérable/"standardisée"
 
 - [API RESTful, spécification des schémas de données *HAL*](http://amundsen.com/hypermedia/), les différents types d'hypermédia définis pour le protocole HTTP et pour construire des API plus robustes. Le livre de l'auteur [Building Hypermedia APIs with HTML5 and Node](https://learning.oreilly.com/library/view/building-hypermedia-apis/9781449309497/), Amundsen, a l'air très intéressant
 - [API RESTful, spécification des schémas de données *JSON-LD 1.1*, *A JSON-based Serialization for Linked Data*](https://www.w3.org/TR/json-ld/), une autre spécification des données renvoyées par une API, soutenue et recommandée par le W3C
