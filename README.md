@@ -5,6 +5,8 @@
     - [Démo *youtypeitwepostit*](#démo-youtypeitwepostit)
     - [Démo Node.js/Express.js](#démo-nodejsexpressjs)
   - [Exercices et corrections](#exercices-et-corrections)
+    - [Énoncés](#énoncés)
+    - [Suggestions de correction](#suggestions-de-correction)
   - [Bibliographie](#bibliographie)
     - [Livres](#livres)
     - [Conférences](#conférences)
@@ -36,8 +38,16 @@ node server/app.js
 
 ## Exercices et corrections
 
-- [Liste publiée des exercices](./exercices/enonces.pdf)
-- [Suggestions de correction](./exercices/suggestions/)
+### Énoncés
+
+- [Liste d'exercices sur la conception d'AI](./exercices/exercices-web-api.pdf)
+- [Liste d'exercices sur JS/Node.js/Express.js](./exercices/exercices-js-node-express.pdf)
+
+### Suggestions de correction
+
+- [Suggestion conception d'API](./exercices/suggestions-exercices-web-api/)
+- [Suggestion JS/Node.js/Express.js](./exercices/suggestions-exercices-js-node-express/)
+
 
 ## Bibliographie
 
