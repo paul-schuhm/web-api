@@ -3,7 +3,7 @@
 - [Développement API (web API/RESTful API)](#développement-api-web-apirestful-api)
   - [Démos](#démos)
     - [Démo *youtypeitwepostit*](#démo-youtypeitwepostit)
-    - [Démo Node.js/Express.js](#démo-nodejsexpressjs)
+    - [Démo du cours](#démo-du-cours)
   - [Exercices et corrections](#exercices-et-corrections)
     - [Énoncés](#énoncés)
     - [Suggestions de correction](#suggestions-de-correction)
@@ -32,9 +32,10 @@ Disponible sur [ce dépôt](https://github.com/RESTful-Web-APIs/example-code).
 node server/app.js
 ~~~
 
-### Démo Node.js/Express.js
+### Démo du cours
 
-[Accéder aux démos Node.js/Express.js](./demos/)
+- [Accéder aux démos Node.js/Express.js](./demos/)
+- [Démo JWT en *vanilla* PHP](https://github.com/paul-schuhm/demo-jwt)
 
 ## Exercices et corrections
 
