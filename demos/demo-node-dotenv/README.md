@@ -4,7 +4,11 @@ Utiliser les variables d'environnement de Node.js avec `process.env` et les fich
 
 ## Personnaliser les variables d'environnement
 
-Créer un fichier .env
+Créer un fichier `.env` qui contiendra les variables d'environnement
+
+~~~bash
+cp .env.dist .env
+~~~
 
 ~~~INI
 PORT=5009
