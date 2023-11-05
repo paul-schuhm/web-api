@@ -34,6 +34,7 @@ npm install
 node --watch ./bin/www
 #ou
 npm start
+curl localhost:3003
 ~~~
 
 ## Watcher les sources

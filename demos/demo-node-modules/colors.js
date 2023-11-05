@@ -8,7 +8,6 @@ class Color {
     }
 }
 
-///randomColor est exposée : public
 function randomColor() {
     // Generate random values for red, green, and blue components
     const r = Math.floor(Math.random() * 256); // 0 to 255
@@ -29,4 +28,4 @@ const allColors = [
     new Color('groovygray', '#D7DBDD'),
 ];
 //On exporte une constante, la classe et une fonction
-module.exports = { allColors, randomColor }
+module.exports = { allColors, Color, randomColor }

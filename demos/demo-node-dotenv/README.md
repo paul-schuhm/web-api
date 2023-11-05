@@ -4,20 +4,14 @@ Utiliser les variables d'environnement de Node.js avec `process.env` et les fich
 
 ## Personnaliser les variables d'environnement
 
-Créer un fichier `.env`
-
-~~~bash
-touch .env #ou cp .env.dist .env
-~~~
-
-Modifier/Ajouter des variables d'environnement :
+Créer un fichier .env
 
 ~~~INI
 PORT=5009
 DEFAULT_MESSAGE='Hello World'
 ~~~
 
-Installer le module [`dotenv`](https://www.npmjs.com/package/dotenv) pour charger le fichier automatiquement
+Installer le module dotenv pour charger le fichier automatiquement
 
 ~~~bash
 npm install dotenv
