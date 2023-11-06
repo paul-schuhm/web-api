@@ -34,7 +34,7 @@ node server/app.js
 
 ### Démo du cours
 
-- [Accéder aux démos Node.js/Express.js](./demos/)
+- [Accéder aux démos JS/Node.js/Express.js](./demos/)
 - [Démo JWT en *vanilla* PHP](https://github.com/paul-schuhm/demo-jwt)
 
 ## Exercices et corrections
