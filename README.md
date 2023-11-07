@@ -7,6 +7,8 @@
   - [Exercices et corrections](#exercices-et-corrections)
     - [Énoncés](#énoncés)
     - [Suggestions de correction](#suggestions-de-correction)
+  - [Outils](#outils)
+    - [Clients HTTP](#clients-http)
   - [Bibliographie](#bibliographie)
     - [Livres](#livres)
     - [Conférences](#conférences)
@@ -49,6 +51,18 @@ node server/app.js
 - [Suggestion conception d'API](./exercices/suggestions-exercices-web-api/)
 - [Suggestion JS/Node.js/Express.js](./exercices/suggestions-exercices-js-node-express/)
 
+
+## Outils
+
+
+### Clients HTTP
+
+- [cURL](https://curl.se/), un outil en ligne de commande pour le transfert de données via des URL. Peut être utilisé comme un client HTTP
+- Sur Windows, [Invoke-RestMethod](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.3), un client HTTP intégré à PowerShell. **Ouvrir une invite de commande PowerShell** pour l'utiliser
+- [Extension VScode Thunder Client](https://www.thunderclient.com/), une extension pour effectuer des reqûetes HTTP et gérer des collections de requêtes depuis VS Code
+- [Extension VSCode REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), une extension pour effectuer des reqûetes HTTP et gérer des collections de requêtes depuis VS Code, plus minimaliste mais efficace
+- Postman, l'artillerie lourde. Nécessite de créer un compte
+- [Swagger UI](https://swagger.io/tools/swagger-ui/), servir de la documentation et de quoi tester son API directement sur son service web (voir Exercice 2 et starter-pack)
 
 ## Bibliographie
 
