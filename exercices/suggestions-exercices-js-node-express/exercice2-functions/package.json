@@ -1,0 +1,19 @@
+{
+  "name": "exercice2-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "intl": "^1.2.5",
+    "intl-locales-supported": "^1.8.12",
+    "jsdocs": "^1.0.0"
+  },
+  "devDependencies": {
+    "jsdoc": "^4.0.2"
+  }
+}
