@@ -2,9 +2,12 @@
 
 ## Lancer le projet
 
-`npm start`
+~~~bash
+npm install
+npm run start
+~~~
 
-> J'ai ajouté l'option `--watch` pour reload automatiquement au changement de code source.
+> J'ai ajouté l'option `--watch` pour relancer automatiquement l'application Node au changement du code source.
 
 ## Réponses aux questions
 
@@ -48,3 +51,5 @@ curl "$baseURL/users/john"
 curl "$baseURL/users/jane"
 curl "$baseURL/users/foo"
 ~~~
+
+> Remarque : on utilise ici la version UNIX de cURL, cela ne va pas fonctionner avec windows. [Voir les possibilités pour tester votre API](../../../README.md#outils)
