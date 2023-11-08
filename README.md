@@ -7,6 +7,7 @@
   - [Exercices et corrections](#exercices-et-corrections)
     - [Énoncés](#énoncés)
     - [Suggestions de correction](#suggestions-de-correction)
+  - [Kit de démarrage complet pour développer son API](#kit-de-démarrage-complet-pour-développer-son-api)
   - [Outils](#outils)
     - [Clients HTTP](#clients-http)
   - [Bibliographie](#bibliographie)
@@ -51,6 +52,10 @@ node server/app.js
 - [Suggestion conception d'API](./exercices/suggestions-exercices-web-api/)
 - [Suggestion JS/Node.js/Express.js](./exercices/suggestions-exercices-js-node-express/)
 
+
+## Kit de démarrage complet pour développer son API
+
+- [Starter pack: RESTful web API avec Node.js, Express.js, MySQL et Adminer](https://github.com/paul-schuhm/starterpack-api-nodejs), un starter pack dockerisé d'une application web node.js pour développer une web API RESTful. L'API vient avec un service de base de données relationnelles (MySQL) et un client graphique (Adminer).
 
 ## Outils
 
