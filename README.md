@@ -55,7 +55,7 @@ node server/app.js
 
 ## Kit de démarrage complet pour développer son API
 
-- [Starter pack: RESTful web API avec Node.js, Express.js, MySQL et Adminer](https://github.com/paul-schuhm/starterpack-api-nodejs), un starter pack dockerisé d'une application web node.js pour développer une web API RESTful. L'API vient avec un service de base de données relationnelles (MySQL) et un client graphique (Adminer).
+- [Starter pack: RESTful web API avec Node.js, Express.js, MySQL et Adminer](https://github.com/paul-schuhm/starterpack-api-nodejs), un starter pack dockerisé d'une application web Node.js pour développer une web API RESTful. En plus d'un service Node.js pour développer son application/API, le pack vient avec un service de base de données relationnelles (MySQL) et un gestionnaire de base de données graphique (Adminer).
 
 ## Outils
 
