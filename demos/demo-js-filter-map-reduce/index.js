@@ -1,96 +1,107 @@
-// Démo : map, filter, reduce, copies
+/**
+ * Données test
+ */
 
-//Filter les nombres dans un tableau
+const users = [{ name: 'Jane', age: 12, nbPosts: 12 }, { name: 'John', age: 28, nbPosts: 0 }, { name: 'Derek', age: 18, nbPosts: 3 }, { name: 'Andrea', age: 35, nbPosts: 6 }];
 
-//Méthode procédurale
-
-// const numbers = [];
-
-// for(let i = 0 ; i !== data.length ; i++){
-//     if(typeof data[i] === 'number'){
-//         numbers.push(data[i]);
-//     }
-// }
-
-//Méthode 'fonctionnelle' : Utiliser filter
-
-//Array
-
-// /**
-//  * Retourne vrai si c'est un nombre, faux sinon
-//  * @param {*} n 
-//  * @returns 
-//  */
-// const filterNumber = (n) => {
-//     return typeof n === 'number'
-// }
-
-// function filterNumber(n){
-//     return typeof item === 'number';
-// }
-
-// const numbers2 = data.filter(filterNumber);
-
-// const data = [1, 2, 3, 'foo bar', {}];
-
-// //Argument : fonction qui renvoie vrai ou faux. Si c'est vrai
-// const numbers2 = data.filter((item) => {
-//     return typeof item === 'number'
-// });
+/**
+ * En utilisant UNIQUEMENT filter, map ou reduce:
+ *  - retourner les users dont le nom commence par la lettre J (insensible à la casse)
+ *  - retourner les users qui sont majeurs (>= 18 ans)
+ *  - retourner chaque user avec une nouvelle clef 'selected' et la valeur "yes" s'ils sont majeurs
+ *  - retourner le nombre total de posts publiés par les utilisateurs sélectionnés
+ *  - Bonus: retourner les users dont le nom commence par la lettre D (insensible à la casse). Que constatez vous ? Fabriquer une fonction qui retourne un filtre
+ */
 
 
-// -- Map : association un a un (transformer un élément en un autre)
 
-// //Multiplier par 2 chaque nombre
-// const numbersMulitpliedBy2 = numbers2.map((item) => {
-//     return item * 2;
-// });
+const usersWithNameStartingWithJ = users.filter((user) => {
+    return user.hasOwnProperty('name') && user.name.toLowerCase().charAt(0) == 'j'
+})
 
-// //De manière procédurale
-// let result = [];
-// for(number of numbers2){
-//     result.push(number * 2);
-// }
-// console.log(result)
-// console.log(numbers2, numbersMulitpliedBy2)
+console.log('Utilisateurs dont le nom commence par J:', usersWithNameStartingWithJ)
 
-// -- Reduce : réduire une collection à un résultat (permet de faire beaucoup de choses)
-// Voir la doc : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+const usersWhoAre18OrAbove = users.filter((user) => {
+    return user.hasOwnProperty('age') && user.age > 18;
+});
 
-const numbers = [1, 2, 3, 4, 5];
+const selectedUsers = usersWhoAre18OrAbove.map((user) => {
+    return { ...user, "selected": "yes" };
+})
 
-//Procédurale (avec des états locaux qui changent)
-let sum = 0;
-for(let i = 0 ; i !== numbers.length; i++){
-    sum += numbers[i];
+console.log('selected users: ', selectedUsers)
+
+const nbTotalOfPosts = selectedUsers.reduce((acc, user) => {
+    return acc + user.nbPosts
+}, 0);
+
+console.log('Nombre total de posts publiés par des users sélectionnés', nbTotalOfPosts)
+
+//Filtres
+
+const filterUserAboveOrEqual18 = (user) => {
+    return user.age >= 18;
 }
-console.log(sum)
 
-//Approche fonctionnelle
-//Filter ? Non
-//Map ? Non
-//Reduce : Oui ! 
+//Mapper
 
-// const numbers = [1, 2, 3, 4, 5];
+const mapToSelectedUser = (user) => {
+    return { ...user, "selected": "yes" };
+}
 
-const sumWithReduce = numbers.reduce((accumulateur, item, currentIndex, array) => {
-    console.log(accumulateur, currentIndex)
-    return accumulateur + item;
-}, 0 );
+/**
+ * Ok, mais je constate que je ne peux pas réutiliser mon filtre précédent sur la lettre J, je dois réécrire le même code. Pas terrible. Je ne peux pas passer la lettre en paramètre à ma callback (donc je dois la définir en dehors quelque part)
+ */
+const usersWithNameStartingWithD = users.filter((user) => {
+    return user.hasOwnProperty('name') && user.name.toLowerCase().charAt(0) == 'd'
+})
 
-// Que se passe t il ?
-//1er element : accumulateur = 0, item = 1, accumulateur = 0 + 1 = 1
-//2eme element : accumulateur = 1, item = 2, accumulateur = 1 + 2 = 3
-//3eme element : accumulateur = 3, item = 3, accumulateur = 3 + 3 = 3
+//2 options pour remédier à ça :
 
-console.log(sumWithReduce)
+//1ere option : on pourrait faire ça :
 
+/**
+ * Retourne la liste filtrée d'user dont le nom commence par la lettre [letter]
+ * @param {array} users 
+ * @param {string} letter 
+ * @returns array
+ */
+function filterByNameStartingWithRes(users, letter) {
+    //Mais... vous ne pouvez pas réutiliser ce filtre ailleurs dans votre code !
+    //Et qui me garantit sans regarder ce code que cette fonction ne fait pas d'autres trucs que filtrer ? Rien.
+    return users.filter((user) => user.name.toLocaleLowerCase().charAt(0) === letter);
+}
 
+/**
+ * Mais : 
+ * - On ne peut pas réutiliser le filtre ! (pour l'appliquer sur autre chose que users par exemple)
+ * - L'interface de la fonction est plus complexe (on passe users et la lettre)
+ * - On n'est pas garantit que la fonction ne fasse pas "autre chose" en plus du filtre sans regarder son code source (charge mentale en plus)
+ * (elle pourrait modifier users, ou faire une autre action sur autre chose, etc.)
+ */
 
+//2eme option : une fonction qui retourne un filtre pour une lettre donnée
 
+/**
+ * Retourne un filtre sur les noms commençant par la lettre {letter}
+ * @param {string} letter 
+ * @returns {function}
+ */
+function filterByNameStartingWith(letter) {
+    return (user) => {
+        return user.hasOwnProperty('name') && user.name.toLowerCase().charAt(0) == letter
+    }
+}
 
+// Avantages : 
+// - Ici on sait que chaque fonction passée dans filter est un filtre (retourne
+//  vrai ou faux) et ne fait rien d'autre, interface est claire, pas d'embrouille. Si bien nommé, je n'ai pas besoin de regarder son code
+// - On peut réutiliser le filtre au besoin
+// - Le filtre n'a pas à connaître users
 
-
-
+console.log(
+    users.filter(filterByNameStartingWith('j')),
+    users.filter(filterByNameStartingWith('d')),
+);
 
 
