@@ -50,9 +50,9 @@ const users = [
 
 Par exemple, voici un environnement minimal qui me convient (à moi peut-être pas à vous ! Vous préférez une interface graphique et c'est ok, ça doit *vous* convenir). En splittant le terminal en deux, j'ai le console.log de mon serveur Node.js à gauche et je lance mes requêtes à droite. J'ai le résultat complet sous les yeux et je peux effectuer un cycle rapide : modification du code source (node --watch relance immédiatement l'application), requête et réponse HTTP à droite avec cURL, l'inspection de mon code à l'exécution à gauche.
 
-![](./correction-exercices/javascript-node-express/exercices-supplementaires/env.png)
+![](./env.png)
 
-3. Dans `index.js`, enregistrer des routes (Méthode HTTP + URL) pour répondre aux cas d'utilisation suivants. A vous de bien choisir la méthode HTTP :
+1. Dans `index.js`, enregistrer des routes (Méthode HTTP + URL) pour répondre aux cas d'utilisation suivants. A vous de bien choisir la méthode HTTP :
 
    1. Sur l'URL, `/current-time`, retourner l'heure courante au format `h:m`. Par exemple, `"Il est 7:41"`. 
    2. Sur l'URL `/users`, retourner tous les users au format JSON (sans modifier l'objet user de votre base de données)
