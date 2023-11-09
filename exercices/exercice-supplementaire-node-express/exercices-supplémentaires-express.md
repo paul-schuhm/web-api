@@ -52,7 +52,7 @@ Par exemple, voici un environnement minimal qui me convient (à moi peut-être p
 
 ![](./env.png)
 
-2. Dans `index.js`, enregistrer des routes (Méthode HTTP + URL) pour répondre aux cas d'utilisation suivants. A vous de bien choisir la méthode HTTP :
+3. Dans `index.js`, enregistrer des routes (Méthode HTTP + URL) pour répondre aux cas d'utilisation suivants. A vous de bien choisir la méthode HTTP :
 
    1. Sur l'URL, `/current-time`, retourner l'heure courante au format `h:m`. Par exemple, `"Il est 7:41"`. 
    2. Sur l'URL `/users`, retourner tous les users au format JSON (sans modifier l'objet user de votre base de données)
