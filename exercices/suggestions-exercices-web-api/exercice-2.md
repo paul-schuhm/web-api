@@ -95,4 +95,4 @@ Scénario nominal (où tout se passe bien)
 
 > Évidemment, nous n'abordons pas ici les points liés à la sécurité, étant donné qu'il n'y a pas de système d'authentification et donc d'autorisations sur le système ! (hormis pour le gestionnaire de site).
 
-Prévoir ces cas permet notamment de s'assurer de l'idempotence des requête `POST` qui ne sont ni sûres ni idempotentes.
+Prévoir ces cas permet notamment de s'assurer de l'idempotence des requête `POST` qui ne sont ni sûres ni idempotentes par définition/convention.
