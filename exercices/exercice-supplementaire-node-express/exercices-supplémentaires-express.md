@@ -28,7 +28,7 @@ Envoyer moi un message privé sur Teams ou un <a href="mailto:paul.schuhmacher.e
 > Conseil : pour démarrer le serveur, *vous devez savoir* qu'il faut créer un serveur http (`createServer`) et qu'il doit écouter (`listen`) sur un port de la machine. Vous n'avez en revanche *pas besoin de savoir comment l'écrire par coeur*, pour cela référez vous à la doc (le *hello world de Node.js*). A terme et avec de l'expérience, vous ferez mieux la distinction entre ce qui est important et ce qui est relève du détail d'implémentation. Vous devez laisser de la place dans votre esprit pour ce qui compte (ici que Node a un écosystème basé sur des modules, comment initialiser un projet, comment installer et utiliser les modules avec export et require, ce qu'est un middleware, les objets req et res, ce qu'est le routing, etc.) et ne pas l'encombrer avec des détails (c'est `createServer` ou `createserver`, `listen` prend en premier argument le `port` ou l'`host`, etc. ?)
 
 
-1. Créer un nouveau module `db.js` qui contiendra une collection d'utilisateurs. Nous nous en servirons pour simuler une base de données. Exporter `users` avec `module.exports` pour le rendre public et accessible à `index.js`
+4. Créer un nouveau module `db.js` qui contiendra une collection d'utilisateurs. Nous nous en servirons pour simuler une base de données. Exporter `users` avec `module.exports` pour le rendre public et accessible à `index.js`
 ~~~js
 const users = [
   { firstName: "John", lastName: "Doe", dateOfBirth: "1990-01-01" },
@@ -44,7 +44,7 @@ const users = [
 ];
 //Exporter users (sinon il restera privé au module)
 ~~~
-2. Importer le module `db` que vous venez de créer dans votre fichier `index.js` avec `require('db')`
+5. Importer le module `db` que vous venez de créer dans votre fichier `index.js` avec `require('db')`
 
 > Conseil: vous allez devoir développer et débuger votre api. Essayer de créer un bon environnement de test. Pensez à utiliser `console.log()` pour inspecter vos variables et le comportement de votre code. Pour émettre des requêtes, le navigateur ne va pas suffire (limité à GET et POST, le web humain). Familiarisez-vous avec un client HTTP qui vous convient : cURL, Postman, Extension VS Code Thunder Client, Invoke-RestMethod de Powershell, etc. [Regardez ici une liste de suggestion](https://github.com/paul-schuhm/web-api#clients-http). *Prenez votre temps* pour configurer un environnement de test qui vous convient et qui vous permet de faire une boucle de test rapidement. C'est un aspect très important. Plus la boucle de test est courte (édition du code source, requete, réponse), plus ce sera agréable de développer : vous gardez votre énergie pour répondre au problème à résoudre, vous pouvez facilement tester vos idées et vous débloquer. Votre environnement doit également vous permettre de documenter votre API et d'enregistrer vos requêtes pour l'avenir. Ajoutez les dans votre `README.md`, vous vous remercierez plus tard.
 
@@ -52,7 +52,7 @@ Par exemple, voici un environnement minimal qui me convient (à moi peut-être p
 
 ![](./env.png)
 
-3. Dans `index.js`, enregistrer des routes (Méthode HTTP + URL) pour répondre aux cas d'utilisation suivants. A vous de bien choisir la méthode HTTP :
+6. Dans `index.js`, enregistrer des routes (Méthode HTTP + URL) pour répondre aux cas d'utilisation suivants. A vous de bien choisir la méthode HTTP :
 
    1. Sur l'URL, `/current-time`, retourner l'heure courante au format `h:m`. Par exemple, `"Il est 7:41"`. 
    2. Sur l'URL `/users`, retourner tous les users au format JSON (sans modifier l'objet user de votre base de données)
