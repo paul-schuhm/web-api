@@ -31,7 +31,7 @@
 6. Le *hard reload* permet d'effectuer une requête en *ignorant* le cache, comme si on faisait la requête sur l'URL pour la première fois.
 
 
-7. `If-Modified-Since` et `If-None-Match`. Oui, il est théoriquement toujours possible de revalider le cache car meême si If-Modified-Since ne peut plus être utilisé dans la requête (car Last-Modified absent), il reste toujours If-None-Match et ETag qui peuvent travailler pour valider le cache
+7. `If-Modified-Since` et `If-None-Match`. Oui, il est théoriquement toujours possible de revalider le cache car même si `If-Modified-Since` ne peut plus être utilisé dans la requête (car `Last-Modified` absent), il reste toujours `If-None-Match` et `ETag` qui peuvent travailler ensemble pour valider le cache.
 
 8.
 
