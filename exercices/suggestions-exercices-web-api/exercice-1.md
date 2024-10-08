@@ -22,10 +22,10 @@
 -  **Quelles sont les deux manières de revalider le cache ?** Il est possible de revalider le cache soit *par la dernière date de modification* avec le couple de headers `If-Modified-Since/Last-Modified` ou *par changement de valeur* avec le couple `If-None-Match/ETag`. Le header `ETag` contient une chaîne de caractères qui représente "la valeur de la réponse". Lorsque la réponse change, cette valeur change aussi.
 
 
-4. On voit tout d'abord que le code status est `304`, donc le contenu est resservi *depuis* le cache. On voit en effet un header `Cache-Control: max-age=0` sur la réponse HTTP émise par le serveur. Cela signifie que la réponse en cache est *toujours* périmée et doit être revalidée à chaque fois. Pour cela une requête conditionnelle est envoyée. Si le contenu de la réponse n'a pas changé et/ou la dernière date de modification n'a pas changé, le cache est mis à jour (header `Date` de la réponse en cache) et la page est resservie depuis le cache. Ce `Cache-Control` est défini par défaut par Express.
+4. On voit tout d'abord que le code status est `304`, donc le contenu est resservi *depuis* le cache. On voit en effet un header `Cache-Control: max-age=0` sur la réponse HTTP émise par le serveur. Cela signifie que la réponse en cache est *toujours* périmée et doit être revalidée à chaque fois. Pour cela une requête conditionnelle est envoyée. Si le contenu de la réponse n'a pas changé et/ou la dernière date de modification n'a pas changé, le cache est mis à jour (notamment le header `Date` de la réponse en cache est actualisé) et la page est resservie depuis le cache. Ce `Cache-Control` est défini par défaut par Express. Ici, comme le contenu n'a pas changé, le cache est validé et la réponse HTTP est resservie depuis le cache.
 
 
-5. Comme le fichier a été modifié et `Cache-Control:max-age=0` (voir le header `Last-modified`), le cache est vicié, une requête conditionnelle est envoyée avec le header `If-Modified-Since`. Comme la condition est vraie, une nouvelle requête complète est faite (code 200). Express a mis à jour `Last Modified` en se basant sur la date de modification du fichier tout simplement.
+5. Comme le fichier a été modifié et `Cache-Control:max-age=0` (voir le header `Last-modified`), le cache est *vicié*, une requête conditionnelle est envoyée avec le header `If-Modified-Since`. Comme la condition est vraie, le cache est *invalidé* et une nouvelle requête complète est faite (on voit le code status `200`). Si l'on inspecte le header `Last-Modified`, on voit qu'il correspond à présent à la nouvelle date de modification du fichier. Express a mis à jour `Last Modified` en se basant cette date.
 
 
 6. Le *hard reload* permet d'effectuer une requête en *ignorant* le cache, comme si on faisait la requête sur l'URL pour la première fois.
@@ -41,7 +41,7 @@ app.use(express.static('public', {
 }))
 ~~~
 
-On s'attend à ce que la réponse en cache soit valable 20 secondes (20 000 millisecondes). Imaginons que l'on serve la page index.html. Elle est mise en cache avec un `max-age` de 20 secondes. Donc pendant 20 secondes, la page devrait être resservie depuis le cache sans qu'aucune requête ne soit émise ! Or, si on modifie rapidement la page index.html et qu'on recharge l'onglet (Ctr+R) le contenu modifié est servi ! On dirait que le navigateur ignore le cache car il se permet de revalider la requête bien que le cache soit encore frais. Pourquoi (diable) ? C'est le navigateur ici qui ajoute sa propre règle : un reload dans le même onglet effectue une requête de validation par défaut. C'est un comportement implémenté par les navigateurs basé sur une heuristique : on s'attend à ce qu'une personne qui recharge son onglet cherche à avoir des informations à jour. Donc l'âge du cache est ignoré et le navigateur effectue lui même une revalidation. Pour contourner ce problème, et utiliser le cache, il faut copier/coller l'URL dans un *nouvel* onglet.
+On s'attend à ce que la réponse en cache soit valable 20 secondes (20 000 millisecondes). Imaginons que l'on serve la page `index.html`. Elle est mise en cache avec un `max-age` de 20 secondes. Donc pendant 20 secondes, la page devrait être resservie depuis le cache sans qu'aucune requête ne soit émise ! Or, si on modifie rapidement la page `index.html` et qu'on recharge l'onglet (Ctr+R) le contenu modifié est tout de même servi ! On dirait que le navigateur *ignore* le cache car il se permet de revalider la requête bien que le cache soit encore frais. Pourquoi (diable) ? **C'est le navigateur ici qui ajoute sa propre règle** : un reload dans le même onglet effectue une requête de validation par défaut. C'est un comportement implémenté par les navigateurs basé sur une heuristique : on s'attend à ce qu'une personne qui recharge son onglet cherche à avoir des informations à jour. Donc l'âge du cache est ignoré et le navigateur effectue lui même une revalidation. Pour contourner ce problème, et utiliser le cache, il faut copier/coller l'URL dans un *nouvel* onglet.
 
 9. Dans cette configuration 
 
@@ -52,14 +52,14 @@ app.use(express.static('public', {
 }))
 ~~~
 
-le serveur définit une politique de cache avec la valeur `no-store`. Cela indique au client "ne met rien en cache, n'utilise pas le cache". C'est une configuration pratique dans un environnement de développement pour éviter des problèmes de cache intempestifs lorsque l'on modifie des assets (css, js)
+le serveur définit une politique de cache avec la valeur `no-store`. Cela indique au client "ne met rien en cache, n'utilise pas le cache". C'est une configuration pratique dans un environnement de développement pour éviter des problèmes de cache intempestifs lorsque l'on modifie des assets (css, js).
 
 
 
-10. *Un caching pattern* utile pour servir au client des ressources toujours à jour et qui donc peuvent changer régulièrement (ex: page de liste d'actualités) est `Cache-Control : no-cache`. no-cache, contrairement à ce que son nom pourrait penser, dit de toujours valider le cache même si le cache est considéré comme frais. Si le cache est revalidé, il n'y aura pas de transfert inutile de données. C'est un bon compromis.
+10. *Un caching pattern* utile pour servir au client des ressources toujours à jour et qui donc peuvent changer régulièrement (ex: page de liste d'actualités) est `Cache-Control : no-cache`. `no-cache`, contrairement à ce que son nom pourrait penser, dit de toujours valider le cache même si le cache est considéré comme *frais* (ignore `age`). Si le cache est revalidé, il n'y aura pas de transfert inutile de données. C'est un bon *compromis* entre avoir des informations à jour et utilisation de la bande passante.
 
 
-11.  Une fonction middleware Express est une fonction qui peut être appelée sur le chemin du traitement d'une requête. Elle permet d'accrocher des traitements à une requête avant ou après que celle-ci ne soit traitée. Ici on créee une fonction middleware qui log sur la sortie standard (côté serveur) le type de la requête reçue : requête "normale" ou requête conditionnelle.
+11.  Une fonction *middleware* Express est une fonction qui peut être appelée sur le chemin du traitement d'une requête. Elle peut manipuler la requête et la réponse HTTP. Elle permet d'accrocher des traitements à une requête avant ou après que celle-ci ne soit traitée. Ici on crée une fonction middleware qui *log* sur la sortie standard (côté serveur) le type de la requête reçue : requête "normale"(complète) ou requête conditionnelle.
 
 ~~~js
 //On attache une fonction middleware à l'application express
