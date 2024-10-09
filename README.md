@@ -38,6 +38,7 @@ node server/app.js
 ### Démo du cours
 
 - [Accéder aux démos JS/Node.js/Express.js](./demos/)
+- [Accéder à la démo architecture RPC vs ROA](./demos/demo-roa-vs-rpc/)
 - [Démo JWT en *vanilla* PHP](https://github.com/paul-schuhm/demo-jwt)
 
 ## Exercices et corrections
@@ -62,7 +63,7 @@ node server/app.js
 
 ### Clients HTTP
 
-- [cURL](https://curl.se/), un outil en ligne de commande pour le transfert de données via des URL. Peut être utilisé comme un client HTTP. Attention, cURL sur Windows et cURL sur les systèmes UNIX (GNU/Linux et macOS) *ne sont pas implémentées pareil et ont des options différentes*. **Tous les exemples de cURL sur le dépôt et dans les supports de cours sont au format UNIX** (à adapter pour Windows), sinon [installer la WSL](https://learn.microsoft.com/fr-fr/windows/wsl/install) et utiliser cURL depuis votre instance GNU/Linux
+- [cURL](https://curl.se/), un outil en ligne de commande pour le transfert de données via des URL. Peut être utilisé comme un client HTTP. Attention, cURL sur Windows et cURL sur les systèmes UNIX (GNU/Linux et macOS) *ne sont pas implémentées pareil et ont des options différentes*. **Tous les exemples de cURL sur le dépôt et dans les supports de cours sont au format UNIX** (à adapter pour Windows), sinon [installer la WSL](https://learn.microsoft.com/fr-fr/windows/wsl/install) et utiliser `cURL` depuis votre instance GNU/Linux
 - Sur Windows, [Invoke-RestMethod](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.3), un client HTTP intégré à PowerShell. **Ouvrir une invite de commande PowerShell** pour l'utiliser
 - [Extension VScode Thunder Client](https://www.thunderclient.com/), une extension pour effectuer des reqûetes HTTP et gérer des collections de requêtes depuis VS Code
 - [Extension VSCode REST client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), une extension pour effectuer des reqûetes HTTP et gérer des collections de requêtes depuis VS Code, plus minimaliste mais efficace

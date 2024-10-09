@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:tns="http://example.com/productservice"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://example.com/productservice"
+    name="ProductService">
+
+    <types>
+        <xsd:schema targetNamespace="http://example.com/productservice">
+            <xsd:element name="getProductListRequest" type="xsd:anyType"/>
+            <xsd:element name="getProductListResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="products" type="tns:ProductList"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="getProductByBarcodeRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="barcode" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="getProductByBarcodeResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="product" type="tns:Product"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:complexType name="Product">
+                <xsd:sequence>
+                    <xsd:element name="name" type="xsd:string"/>
+                    <xsd:element name="barcode" type="xsd:string"/>
+                    <xsd:element name="price" type="xsd:float"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="ProductList">
+                <xsd:sequence>
+                    <xsd:element name="product" type="tns:Product" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+
+    <message name="getProductListRequest"/>
+    <message name="getProductListResponse">
+        <part name="parameters" element="tns:getProductListResponse"/>
+    </message>
+
+    <message name="getProductByBarcodeRequest">
+        <part name="parameters" element="tns:getProductByBarcodeRequest"/>
+    </message>
+    <message name="getProductByBarcodeResponse">
+        <part name="parameters" element="tns:getProductByBarcodeResponse"/>
+    </message>
+
+    <portType name="ProductServicePortType">
+        <operation name="getProductList">
+            <input message="tns:getProductListRequest"/>
+            <output message="tns:getProductListResponse"/>
+        </operation>
+
+        <operation name="getProductByBarcode">
+            <input message="tns:getProductByBarcodeRequest"/>
+            <output message="tns:getProductByBarcodeResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="ProductServiceBinding" type="tns:ProductServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getProductList">
+            <soap:operation soapAction="getProductList"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+        <operation name="getProductByBarcode">
+            <soap:operation soapAction="getProductByBarcode"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="ProductService">
+        <port name="ProductServiceSoap" binding="tns:ProductServiceBinding">
+            <soap:address location="http://localhost:3000/ProductService"/>
+        </port>
+    </service>
+</definitions>
