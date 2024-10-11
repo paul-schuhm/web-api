@@ -1,6 +1,29 @@
-## Exercice 6
+## Exercice 6 - API RESTful d'un système de carnet d'adresses
+
+- [Exercice 6 - API RESTful d'un système de carnet d'adresses](#exercice-6---api-restful-dun-système-de-carnet-dadresses)
+- [Spécifications du système](#spécifications-du-système)
+- [1. Déterminer l'ensemble des données](#1-déterminer-lensemble-des-données)
+- [2. **Décomposer** l'ensemble de données en ressources](#2-décomposer-lensemble-de-données-en-ressources)
+- [3. **Nommer** les ressources avec des URI](#3-nommer-les-ressources-avec-des-uri)
+- [4. **Implémenter** un sous-ensemble de l'interface uniforme (`GET`, `POST`, `DELETE`, `PUT`) pour chaque ressource](#4-implémenter-un-sous-ensemble-de-linterface-uniforme-get-post-delete-put-pour-chaque-ressource)
+- [Récapitulatif](#récapitulatif)
+
 
 ## Spécifications du système 
+
+> Cet exercice est tiré de l'ouvrage [Bien architecturer une application REST](https://www.eyrolles.com/Informatique/Livre/bien-architecturer-une-application-rest-9782212850154/) (voir [ressoures](#ressource))
+
+
+Vous êtes en charge du développement d'un service web de carnet d'adresses. Au sein de cette application, les clients doivent pouvoir lire des cartes de visites (coordonnées d'une personne), en ajouter, les modifier ou les supprimer. Il faut également pouvoir créer des *groupes* pour regroupes des fiches (professionnel, famille, amis, etc.). Le service doit permettre d'accéder à une fiche individuelle ou à un groupe de fiches et d'effectuer une recherche par *nom de famille*.
+
+Les *coordonnées* d'une personne sont définies par : 
+
+- Le prénom
+- Le nom de famille
+- Le genre
+- Le numéro de téléphone
+- L'adresse
+
 
 ## 1. Déterminer l'ensemble des données
 
@@ -55,7 +78,7 @@ Décomposons ces données en ressources. Ces ressources sont définies pour un u
 
 > On remarque que sur toutes ces URL, chaque segment de l'URL (délimité par '/') pointe bien sur une ressource.
 
-### 4. **Implémenter** un sous-ensemble de l'interface uniforme (`GET`, `POST`, `DELETE`, `PUT`) pour chaque ressource
+## 4. **Implémenter** un sous-ensemble de l'interface uniforme (`GET`, `POST`, `DELETE`, `PUT`) pour chaque ressource
 
 
 - *La liste des cartes de visite* : GET, POST
@@ -68,8 +91,9 @@ Décomposons ces données en ressources. Ces ressources sont définies pour un u
 
 > Toutes les ressources implémentent en plus les méthodes HTTP `HEAD` et `OPTIONS`
 
-### Récapitulatif
+## Récapitulatif
 
+Ce tableau récapitule le travail de conception et l'interface de notre web API :
 
 | Ressource  | URL  | Méthodes HTTP  | Paramètres d'URL (variations)  | Commentaires  |
 |---|---|---|---|---|
