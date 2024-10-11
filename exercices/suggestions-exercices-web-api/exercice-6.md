@@ -95,11 +95,11 @@ Décomposons ces données en ressources. Ces ressources sont définies pour un u
 
 Ce tableau récapitule le travail de conception et l'interface de notre web API :
 
-| Ressource  | URL  | Méthodes HTTP  | Paramètres d'URL (variations)  | Commentaires  |
+| Ressource  | URL  | Méthodes HTTP  | Paramètres d'URL (variations)  | Commentaires  | 
 |---|---|---|---|---|
-| *La liste des cartes de visite*, *La liste des cartes de visite filtrée par nom de famille* | `/users/{id}/cards` | GET, POST  | `last_name` pour filtrer les cartes par nom de famille. Exemple: `/users/1/cards?last_name=doe`  | Cette ressource possède une variation  |
-| *Le détail d'une carte de visite*| `/users/{id}/cards/{id}` | GET, DELETE  |  |  Supprimer une carte de visite. Doit supprimer ses références dans chaque groupe auquel elle appartient |
-| *La liste des groupes de cartes de visite* | `/users/{id}/groups` | GET, POST  |  | Ajouter un nouveau groupe  |
-| *Le détail d'un groupe de cartes de visite*| `/users/{id}/groups/{id}` | GET, DELETE  |  | Supprimer un groupe  |
-| *Les cartes de visite d'un groupe*| `/users/{id}/groups/{id}/cards` | GET, POST  |  | Ajouter une carte existante à un groupe  |
-| *Le détail d'une carte de visite d'un groupe*| `/users/{id}/groups/{id}/cards/{id}` | GET, DELETE  |  | Supprimer la carte d'un groupe  |
+| *La liste des cartes de visite*, *La liste des cartes de visite filtrée par nom de famille* (**Collection**) | `/users/{id}/cards` | GET, POST  | `last_name` pour filtrer les cartes par nom de famille. Exemple: `/users/1/cards?last_name=doe`  | Cette ressource possède une variation  |
+| *Le détail d'une carte de visite* (**Document**)| `/users/{id}/cards/{id}` | GET, DELETE  |  |  Supprimer une carte de visite. Doit supprimer ses références dans chaque groupe auquel elle appartient |
+| *La liste des groupes de cartes de visite* (**Store**) | `/users/{id}/groups` | GET, POST  |  | Ajouter un nouveau groupe  |
+| *Le détail d'un groupe de cartes de visite* (**Document**)| `/users/{id}/groups/{id}` | GET, DELETE  |  | Supprimer un groupe  |
+| *Les cartes de visite d'un groupe* (**Collection**)| `/users/{id}/groups/{id}/cards` | GET, POST  |  | Ajouter une carte existante à un groupe  |
+| *Le détail d'une carte de visite d'un groupe* (**Document**)| `/users/{id}/groups/{id}/cards/{id}` | GET, DELETE  |  | Supprimer la carte d'un groupe  |
