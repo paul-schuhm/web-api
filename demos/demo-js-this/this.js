@@ -6,7 +6,7 @@
 const test = {
     prop: 42,
     func: function () {
-        //A quoi fait référence this dans ce contexte ?
+        //A quoi fait référence this dans ce contexte ? A l'objet sur lequel est défini la fonction
         return this.prop;
     },
 };
