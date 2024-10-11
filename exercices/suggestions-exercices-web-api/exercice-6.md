@@ -43,9 +43,9 @@ Légende:
 |   `id_user`	|  L'identifiant d’un utilisateur 	|   N	|    Identifie de manière *unique* l’utilisateur	|  Oui 	| 
 |   `first_name`	|  Le prénom d'un contact 	|   A	|    	|  Oui 	| 
 |   `last_name`	|  Le prénom d'un contact 	|   A	|  Utilisé pour filtrer les contacts  	|  Oui 	| 
-|   `gender`	|  Le genre d'un contact 	|   A	|  	|  Non 	| 
-|   `tel`	|  Le numéro de téléphone d'un contact 	|   A	|  	|  Non 	| 
-|   `address`*	|  L'adresse d'un contact 	|   A	|  	|  Non 	| 
+|   `gender`	|  Le genre d'un contact 	|   A	|  	|  Oui 	| 
+|   `tel`	|  Le numéro de téléphone d'un contact 	|   A	|  	|  Oui 	| 
+|   `address`*	|  L'adresse d'un contact 	|   A	|  	|  Oui 	| 
 |   `id_group`	|  L'identifiant d'un groupe de contacts crée par l'utilisateur 	|   N	| Identifie de manière *unique* un groupe 	|  Oui 	| 
 |   `group`	|  Le nom d'un groupe de contacts crée par l'utilisateur 	|   AN	|  	|  Oui 	| 
 
