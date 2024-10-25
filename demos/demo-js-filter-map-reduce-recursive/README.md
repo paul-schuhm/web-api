@@ -1,5 +1,6 @@
 # Démo - programmation fonctionnelle en JS, les bases
 
+## Source `index.js`
 
 ~~~js
 const users = [{ name: 'Jane', age: 12, nbPosts: 12 }, { name: 'John', age: 28, nbPosts: 0 }, { name: 'Derek', age: 18, nbPosts: 3 }, { name: 'Andrea', age: 35, nbPosts: 6 }];

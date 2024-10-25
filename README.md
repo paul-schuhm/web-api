@@ -76,11 +76,12 @@ node server/app.js
 
 ## Ouvrages de référence
 
-<img src="./assets/RESTful Web Services.jpeg" height=200><img src="./assets/restful-wep-api.png" height=200>
+<img src="./assets/RESTful Web Services.jpeg" height=200><img src="./assets/restful-wep-api.png" height=200><img src="./assets/recipes.png" height=200>
 
-- [RESTful Web Services](https://learning.oreilly.com/library/view/restful-web-services/9780596529260/), de Leonard Richardson, Sam Ruby, O'Reilly, 2007 **S'il y a un livre à lire/étudier/feuilleter/avoir c'est celui-ci, must have**. Ce livre est passé sous licence Creative Commons dans le cadre du projet [O'Reilly Open Books](https://www.oreilly.com/openbook/). [Accéder à la version en ligne/PDF gratuite](http://restfulwebapis.org/rws.html) 
-- [RESTful Web APIs](https://learning.oreilly.com/library/view/restful-web-apis/9781449359713/), de Leonard Richardson, Mike Amundsen, Sam Ruby, O'Reilly, 2013. 
-- [REST API Design Rulebook](https://learning.oreilly.com/library/view/rest-api-design/9781449317904/), de Mark Masse, O'Reilly, 2011 
+- [RESTful Web Services](https://learning.oreilly.com/library/view/restful-web-services/9780596529260/), de Leonard Richardson, Sam Ruby, O'Reilly, 2007 **S'il y a un livre à lire/étudier/feuilleter/avoir c'est celui-ci, must have**. Il commence à dater mais reste très profond et intéressant. Ce livre est passé sous licence Creative Commons dans le cadre du projet [O'Reilly Open Books](https://www.oreilly.com/openbook/). [Accéder à la version en ligne/PDF gratuite](http://restfulwebapis.org/rws.html) **LP++**
+- [RESTful Web APIs](https://learning.oreilly.com/library/view/restful-web-apis/9781449359713/), de Leonard Richardson, Mike Amundsen, Sam Ruby, O'Reilly, 2013. Une version actualisée, rafraîchie de *RESTful Web Services*; **LE++**
+- [REST API Design Rulebook](https://learning.oreilly.com/library/view/rest-api-design/9781449317904/), de Mark Masse, O'Reilly, 2011. **LI+** 
+- [RESTful Web API Patterns and Practices Cookbook](https://www.oreilly.com/library/view/restful-web-api/9781098106737/), de Mike Amundsen, O'Reilly, 2022. Introduction un peu plus obscure, synthétique (mais intéressante !) que les livres de Richardson et al., se concentre sur les problèmes/solutions (comme son titre l'indique). *Très précieux pour mettre en application* ce que l'on a appris de Richardson, sur des cas concrets, complexes et réels. **LP+**;
 - [REST API Development with Node.js : Manage and Understand the Full Capabilities of Successful REST Development, 2nd Edition](https://learning.oreilly.com/library/view/rest-api-development/9781484237151/), de Fernando Doglio, Apress, 2018
 - [Bien architecturer une application REST](https://www.eyrolles.com/Informatique/Livre/bien-architecturer-une-application-rest-9782212850154/), par Olivier Gutknecht, avec la contribution de Jean Zundel, Eyrolles, 2009
 
