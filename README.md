@@ -138,6 +138,7 @@ node server/app.js
 
 ## Sur la *sémantique* des hypermédias (vocabulaires, actions)
 
+- [Resource Description Framework](https://fr.wikipedia.org/wiki/Resource_Description_Framework), a pour but de décrire formellement les ressources Web et leurs métadonnées, afin de permettre le traitement automatique de ces descriptions. Développé par le W3C, RDF est le langage de base du [Web sémantique](https://fr.wikipedia.org/wiki/Web_s%C3%A9mantique); 
 - [Schema.org](https://schema.org/), *Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for *structured data* on the Internet*. Propose une liste de **vocabulaires standardisés** à suivre pour différents modèles de données;
 - [Microformats wiki](http://microformats.org/wiki/Main_Page), un wiki qui décrit des spécifications de structure de données interopérables:
 - [JSON-LD 1.1, A JSON-based Serialization for Linked Data](https://www.w3.org/TR/json-ld/), une spécification de représentation standardisée des données *soutenue et recommandée par le W3C*. Fait partie du projet *Hydra*. **Vocabulaire standardisé**
