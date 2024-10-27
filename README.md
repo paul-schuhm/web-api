@@ -13,12 +13,12 @@
   - [Références](#références)
   - [Ouvrages de référence](#ouvrages-de-référence)
   - [Conférences (YouTube)](#conférences-youtube)
-  - [Articles sur REST et les services RESTful](#articles-sur-rest-et-les-services-restful)
-  - [Articles sur REST et les services RESTful](#articles-sur-rest-et-les-services-restful-1)
+  - [Articles sur le web, les systèmes hypertextes et les services RESTful](#articles-sur-le-web-les-systèmes-hypertextes-et-les-services-restful)
   - [RFC (*Request For Comments*) intéressantes et utilisées](#rfc-request-for-comments-intéressantes-et-utilisées)
   - [Sur le cache HTTP](#sur-le-cache-http)
-  - [Spécifications de représentations des ressources](#spécifications-de-représentations-des-ressources)
-  - [Spécifications sur les modèles de données](#spécifications-sur-les-modèles-de-données)
+  - [Spécifications de représentations hypermédias](#spécifications-de-représentations-hypermédias)
+  - [Spécification OpenAPI](#spécification-openapi)
+  - [Sur la *sémantique* des hypermédias (vocabulaires, actions)](#sur-la-sémantique-des-hypermédias-vocabulaires-actions)
 
 
 ## Démos
@@ -120,17 +120,25 @@ node server/app.js
 - [HTTP Caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching), une synthèse sur l'implémentation du cache du protocole HTTP. Attention, [tous les navigateurs n'implémentent pas le standard au même point](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#browser_compatibility).
 - [Un tutoriel sur la mise en cache du protocole HTTP](https://www.mnot.net/cache_docs/), un très bon tutoriel en français sur la mise en cache du protocole HTTP
 
-## Spécifications de représentations des ressources/messages
+## Spécifications de représentations hypermédias
 
-> Pas de standard ici, beaucoup de propositions de spécifications. Dans le cours nous utilisons HAL, mais il y'en a d'autres, plus utilisées
-
+- [Spécification des schémas de données *HAL*](http://amundsen.com/hypermedia/), les différents types d'hypermédia définis pour le protocole HTTP et pour construire des API plus robustes. Le livre de l'auteur [Building Hypermedia APIs with HTML5 and Node](https://learning.oreilly.com/library/view/building-hypermedia-apis/9781449309497/), Amundsen, a l'air très intéressant
 - [HAL Explorer](https://github.com/toedter/hal-explorer), with HAL Explorer you can browse and explore HAL and HAL-FORMS based RESTful Hypermedia APIs. HAL Explorer was inspired by Mike Kelly’s HAL-Browser. HAL Explorer also supports Spring Profiles.
-- [API RESTful, spécification des schémas de données *HAL*](http://amundsen.com/hypermedia/), les différents types d'hypermédia définis pour le protocole HTTP et pour construire des API plus robustes. Le livre de l'auteur [Building Hypermedia APIs with HTML5 and Node](https://learning.oreilly.com/library/view/building-hypermedia-apis/9781449309497/), Amundsen, a l'air très intéressant
-- [API RESTful, spécification des schémas de données *JSON-LD 1.1*, *A JSON-based Serialization for Linked Data*](https://www.w3.org/TR/json-ld/), une autre spécification des données renvoyées par une API, *soutenue et recommandée par le W3C*
-- [OpenAPI Specification](https://spec.openapis.org/oas/latest.html), *The OpenAPI Specification (OAS)* defines a standard, programming language-agnostic interface description for HTTP APIs, which allows both humans and computers to discover and understand the capabilities of a service without requiring access to source code, additional documentation, or inspection of network traffic. **[Swagger](https://swagger.io/) est l'implémentation de cette spécification**
 - [Hydra](http://www.markus-lanthaler.com/hydra/), Hydra is an effort to simplify the development of interoperable, hypermedia-driven Web APIs. The two fundamental building blocks of Hydra are *JSON‑LD* and the *Hydra Core Vocabulary*.
 
-## Spécifications sur les modèles de données (vocabulaires)
+## Spécification OpenAPI 
 
-- [Schema.org](https://schema.org/), *Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet*. Propose une liste de schémas à suivre pour différents modèles de données.
-- [Microformats wiki](http://microformats.org/wiki/Main_Page), un wiki qui décrit des spécifications de structure de données interopérables 
+> Ne définit pas de sémantique (message, action)
+
+- [OpenAPI Specification](https://spec.openapis.org/oas/latest.html), *The OpenAPI Specification (OAS)* defines a **standard**, programming language-agnostic interface **description** for HTTP APIs, which allows both humans and computers to discover and understand the capabilities of a service without requiring access to source code, additional documentation, or inspection of network traffic.[Swagger](https://swagger.io/) est **l'implémentation de cette spécification**.
+- [OpenAPI Specification v3.1.0](https://spec.openapis.org/oas/v3.1.0)
+- [What Is OpenAPI?](https://swagger.io/docs/specification/v3_0/about/)
+- [Dépôts des outils Swagger](https://github.com/swagger-api)
+
+
+## Sur la *sémantique* des hypermédias (vocabulaires, actions)
+
+- [Schema.org](https://schema.org/), *Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for *structured data* on the Internet*. Propose une liste de **vocabulaires standardisés** à suivre pour différents modèles de données;
+- [Microformats wiki](http://microformats.org/wiki/Main_Page), un wiki qui décrit des spécifications de structure de données interopérables:
+- [JSON-LD 1.1, A JSON-based Serialization for Linked Data](https://www.w3.org/TR/json-ld/), une spécification de représentation standardisée des données *soutenue et recommandée par le W3C*. Fait partie du projet *Hydra*. **Vocabulaire standardisé**
+- [Hydra Core Vocabularies](http://www.markus-lanthaler.com/hydra/spec/latest/core/), *soutenue et recommandée par le W3C* [Hydra](http://www.markus-lanthaler.com/hydra/) is an effort to simplify the development of interoperable, hypermedia-driven Web APIs. The two fundamental building blocks of Hydra are *JSON‑LD* and the *Hydra Core Vocabulary*. Décrit des ressources, leurs types et leurs propriétés, ainsi que les opérations (actions) qui peuvent être effectuées sur ces ressources. **Actions standardisées**
