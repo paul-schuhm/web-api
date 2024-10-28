@@ -25,6 +25,8 @@ curl -w "%{http_code}" $url
 8. Avec l'option `-H`: `curl -H "Nom du header:valeur"`
 9. `curl $url/users --etag-save etag` (on l'enregistre dans un fichier temporaire). `curl --etag-compare etag $url/users -w "%{http_code}`" On obtient un code 304, redirection vers le cache. La requête conditionnelle a fonctionné. Si on modifie l'`ETag` dans le fichier et refait la requête on a un 200 car la requête conditionnelle `If-None-Match` renverrait true (les `ETag` ne match plus), ce qui déclencherait la "requête complete" avec le corps, donc un code `200` avec le body (document resservi)
 
+Voir [le tutoriel de cURL](https://curl.se/docs/tutorial.html) sur le site officiel.
+
 ## Utiliser jq
 
 Utiliser [jq](https://jqlang.github.io/jq/tutorial/) pour *requêter* le json et le *prettyfier*
