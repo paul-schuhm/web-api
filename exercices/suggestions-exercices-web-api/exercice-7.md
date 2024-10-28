@@ -20,10 +20,10 @@ On utilise cette variable pour écrire nos requêtes:
 4. `curl -h`, on voit qu'on peut acceder a de l'info sur les categories. `curl -h category` puis `curl -h http`
 la on voit `curl -I` pour faire un `HEAD` (n'afficher que les entêtes de la réponse)
 curl -w "%{http_code}" $url
-1. `curl -w "%{http_code}" -X POST -d="title=Foo" $url`
-2. `curl -w "%{http_code}" -X DELETE $url/8`. Le code status est `200` meme si ressource existe pas d'ailleurs. *Remarque: ÇA devrait être 204. Il ya une issue sur le dépot : https://github.com/typicode/jsonplaceholder/issues/93*
-3. Avec l'option `-H`: `curl -H "Nom du header:valeur"`
-4. `curl $url/users --etag-save etag` (on l'enregistre dans un fichier temporaire). `curl --etag-compare etag $url/users -w "%{http_code}`" On obtient un code 304, redirection vers le cache. La requête conditionnelle a fonctionné. Si on modifie l'`ETag` dans le fichier et refait la requête on a un 200 car la requête conditionnelle `If-None-Match` renverrait true (les `ETag` ne match plus), ce qui déclencherait la "requête complete" avec le corps, donc un code `200` avec le body (document resservi)
+6. `curl -w "%{http_code}" -X POST -d="title=Foo" $url`
+7. `curl -w "%{http_code}" -X DELETE $url/8`. Le code status est `200` meme si ressource existe pas d'ailleurs. *Remarque: ÇA devrait être 204. Il ya une issue sur le dépot : https://github.com/typicode/jsonplaceholder/issues/93*
+8. Avec l'option `-H`: `curl -H "Nom du header:valeur"`
+9. `curl $url/users --etag-save etag` (on l'enregistre dans un fichier temporaire). `curl --etag-compare etag $url/users -w "%{http_code}`" On obtient un code 304, redirection vers le cache. La requête conditionnelle a fonctionné. Si on modifie l'`ETag` dans le fichier et refait la requête on a un 200 car la requête conditionnelle `If-None-Match` renverrait true (les `ETag` ne match plus), ce qui déclencherait la "requête complete" avec le corps, donc un code `200` avec le body (document resservi)
 
 ## Utiliser jq
 
