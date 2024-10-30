@@ -5,7 +5,6 @@
     - [Démo *youtypeitwepostit*](#démo-youtypeitwepostit)
     - [Démo du cours](#démo-du-cours)
   - [Exercices et corrections](#exercices-et-corrections)
-    - [Énoncés](#énoncés)
     - [Suggestions de correction](#suggestions-de-correction)
   - [Kit de démarrage complet pour développer son API](#kit-de-démarrage-complet-pour-développer-son-api)
   - [Outils](#outils)
@@ -45,10 +44,6 @@ node server/app.js
 
 ## Exercices et corrections
 
-### Énoncés
-
-- [Liste d'exercices sur la conception de web API](./exercices/exercices-web-api.pdf)
-- [Liste d'exercices sur JS/Node.js/Express.js](./exercices/exercices-js-node-express.pdf)
 
 ### Suggestions de correction
 
