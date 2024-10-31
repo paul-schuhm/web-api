@@ -5,19 +5,18 @@
     - [Démo *youtypeitwepostit*](#démo-youtypeitwepostit)
     - [Démo du cours](#démo-du-cours)
   - [Exercices et corrections](#exercices-et-corrections)
-    - [Suggestions de correction](#suggestions-de-correction)
   - [Kit de démarrage complet pour développer son API](#kit-de-démarrage-complet-pour-développer-son-api)
   - [Outils](#outils)
     - [Clients HTTP](#clients-http)
   - [Références](#références)
-  - [Ouvrages de référence](#ouvrages-de-référence)
-  - [Conférences (YouTube)](#conférences-youtube)
-  - [Articles sur le web, les systèmes hypertextes et les services RESTful](#articles-sur-le-web-les-systèmes-hypertextes-et-les-services-restful)
-  - [RFC (*Request For Comments*) intéressantes et utilisées](#rfc-request-for-comments-intéressantes-et-utilisées)
-  - [Sur le cache HTTP](#sur-le-cache-http)
-  - [Spécifications de représentations hypermédias](#spécifications-de-représentations-hypermédias)
-  - [Spécification OpenAPI](#spécification-openapi)
-  - [Sur la *sémantique* des hypermédias (vocabulaires, actions)](#sur-la-sémantique-des-hypermédias-vocabulaires-actions)
+    - [Ouvrages](#ouvrages)
+    - [Conférences (YouTube)](#conférences-youtube)
+    - [Articles sur le web, les systèmes hypertextes et les services RESTful](#articles-sur-le-web-les-systèmes-hypertextes-et-les-services-restful)
+    - [RFC (*Request For Comments*) intéressantes et utilisées](#rfc-request-for-comments-intéressantes-et-utilisées)
+    - [Sur le cache HTTP](#sur-le-cache-http)
+    - [Spécifications de représentations hypermédias](#spécifications-de-représentations-hypermédias)
+    - [Spécification OpenAPI](#spécification-openapi)
+    - [Sur la *sémantique* des hypermédias (vocabulaires, actions)](#sur-la-sémantique-des-hypermédias-vocabulaires-actions)
 
 
 ## Démos
@@ -44,9 +43,6 @@ node server/app.js
 
 ## Exercices et corrections
 
-
-### Suggestions de correction
-
 - [Suggestion conception d'API](./exercices/suggestions-exercices-web-api/)
 - [Suggestion JS/Node.js/Express.js](./exercices/suggestions-exercices-js-node-express/)
 
@@ -69,7 +65,7 @@ node server/app.js
 
 ## Références
 
-## Ouvrages de référence
+### Ouvrages
 
 <img src="./assets/RESTful Web Services.jpeg" height=200><img src="./assets/restful-wep-api.png" height=200><img src="./assets/recipes.png" height=200>
 
@@ -81,13 +77,13 @@ node server/app.js
 - [Bien architecturer une application REST](https://www.eyrolles.com/Informatique/Livre/bien-architecturer-une-application-rest-9782212850154/), par Olivier Gutknecht, avec la contribution de Jean Zundel, Eyrolles, 2009
 
 
-## Conférences (YouTube)
+### Conférences (YouTube)
 
 - [Boostez vos applications avec HTTP/2 - Kévin Dunglas - Forum PHP 2018 ](https://www.youtube.com/watch?v=av9Z7NqMxFs&list=PLS3XEhTy6-Ale8Et6pxRR2I3LYNt8-rX3&index=16)
 - [Performance Optimization - Fabien Potencier - PHP Tour 2016](https://www.youtube.com/watch?v=VuwyY_akLMA&list=PLS3XEhTy6-Ale8Et6pxRR2I3LYNt8-rX3&index=53)
 - [Same-origin policy: The core of web security @ OWASP Wellington](https://www.youtube.com/watch?v=zul8TtVS-64&list=PLS3XEhTy6-Ale8Et6pxRR2I3LYNt8-rX3&index=19&t=2632s), excellente présentation de Kirk Jackson de la Same Origin Policy avec démonstrations à l'appui. **À regarder**.
 
-## Articles sur le web, les systèmes hypertextes et les services RESTful
+### Articles sur le web, les systèmes hypertextes et les services RESTful
 
 - [W3C: Cool URIs don't change](https://www.w3.org/Provider/Style/URI.html), par Tim Berners-Lee
 - [W3C: Architecture of the World Wide Web, Volume One](https://www.w3.org/TR/2004/REC-webarch-20041215/), écrit par le *W3C Technical Architecture Group*: Tim Berners-Lee (co-Chair, W3C), Tim Bray (Antarctica Systems), Dan Connolly (W3C) et *al.*. Une *bible* sur l'architecture du web
@@ -101,27 +97,27 @@ node server/app.js
   - [The case for hyperlinks in APIs](https://blog.stateless.co/post/68259564511/the-case-for-hyperlinks-in-apis)
 - [Services web](https://fr.wikipedia.org/wiki/Service_web), très bon article Wikipédia sur les services web et les différentes architectures
 
-## RFC (*Request For Comments*) intéressantes et utilisées
+### RFC (*Request For Comments*) intéressantes et utilisées
 
-> Documents à l'origine des standards du web
+> Documents à l'origine des standards du web. Vous êtes encouragé·es à les parcourir
 
 - [RFC3986: Uniform Resource Identifier (URI): Generic Syntax](https://www.rfc-editor.org/rfc/rfc3986.txt), T. Berners-Lee (W3C/MIT), R. Fielding (Day Software), L. Masinter (Adobe Systems)
 - [JSON Hypertext Application Language draft-kelly-json-hal-08](https://datatracker.ietf.org/doc/html/draft-kelly-json-hal-08#section-8.1), HAL representation pour les modèles de données. Une proposition de standard
 - [RFC 9068: JWT Profile for OAuth 2.0 Access Tokens](https://oauth.net/2/jwt-access-tokens/), la RFC du standard JWT
+- [RFC 9110: HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html), la RFC sur la sémantique du protocole HTTP (sémantique des verbes, headers, concepts). La source
 
-
-## Sur le cache HTTP
+### Sur le cache HTTP
 
 - [HTTP Caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching), une synthèse sur l'implémentation du cache du protocole HTTP. Attention, [tous les navigateurs n'implémentent pas le standard au même point](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#browser_compatibility).
 - [Un tutoriel sur la mise en cache du protocole HTTP](https://www.mnot.net/cache_docs/), un très bon tutoriel en français sur la mise en cache du protocole HTTP
 
-## Spécifications de représentations hypermédias
+### Spécifications de représentations hypermédias
 
 - [Spécification des schémas de données *HAL*](http://amundsen.com/hypermedia/), les différents types d'hypermédia définis pour le protocole HTTP et pour construire des API plus robustes. Le livre de l'auteur [Building Hypermedia APIs with HTML5 and Node](https://learning.oreilly.com/library/view/building-hypermedia-apis/9781449309497/), Amundsen, a l'air très intéressant
 - [HAL Explorer](https://github.com/toedter/hal-explorer), with HAL Explorer you can browse and explore HAL and HAL-FORMS based RESTful Hypermedia APIs. HAL Explorer was inspired by Mike Kelly’s HAL-Browser. HAL Explorer also supports Spring Profiles.
 - [Hydra](http://www.markus-lanthaler.com/hydra/), Hydra is an effort to simplify the development of interoperable, hypermedia-driven Web APIs. The two fundamental building blocks of Hydra are *JSON‑LD* and the *Hydra Core Vocabulary*.
 
-## Spécification OpenAPI 
+### Spécification OpenAPI 
 
 > Ne définit pas de sémantique (message, action)
 
@@ -131,7 +127,7 @@ node server/app.js
 - [Dépôts des outils Swagger](https://github.com/swagger-api)
 
 
-## Sur la *sémantique* des hypermédias (vocabulaires, actions)
+### Sur la *sémantique* des hypermédias (vocabulaires, actions)
 
 - [Resource Description Framework](https://fr.wikipedia.org/wiki/Resource_Description_Framework), a pour but de décrire formellement les ressources Web et leurs métadonnées, afin de permettre le traitement automatique de ces descriptions. Développé par le W3C, RDF est le langage de base du [Web sémantique](https://fr.wikipedia.org/wiki/Web_s%C3%A9mantique); 
 - [Schema.org](https://schema.org/), *Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for *structured data* on the Internet*. Propose une liste de **vocabulaires standardisés** à suivre pour différents modèles de données;
