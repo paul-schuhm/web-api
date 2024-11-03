@@ -87,13 +87,14 @@ node server/app.js
 
 ### Articles sur le web, les systèmes hypertextes et les services RESTful
 
-- [REST APIs must be hypertext-driven](https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven), billet de blog de Roy T. Fiedling très intéressant sur le fait qu'une API RESTful doit être orientée *hypertexte* (ou de manière générale par les *hypermédia*)
+- [REST APIs must be hypertext-driven](https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven), billet de blog de Roy T. Fiedling très intéressant sur le fait qu'une API RESTful *doit* être orientée *hypertexte* (ou de manière générale *hypermédias*)
 - [W3C: Cool URIs don't change](https://www.w3.org/Provider/Style/URI.html), par Tim Berners-Lee
+- [The Vision of Kay and Fielding: Growable Systems that Last for Decades](https://www.devx.com/enterprise-zone/the-vision-of-kay-and-fielding-growable-systems-that-last-for-decades/)
 - [W3C: Architecture of the World Wide Web, Volume One](https://www.w3.org/TR/2004/REC-webarch-20041215/), écrit par le *W3C Technical Architecture Group*: Tim Berners-Lee (co-Chair, W3C), Tim Bray (Antarctica Systems), Dan Connolly (W3C) et *al.*. Une *bible* sur l'architecture du web
 - [REST](https://gayerie.dev/epsi-poe-201703/web-services/07_rest.html), une synthèse de David Gayerie sur REST de grande qualité, avec une bibliographie utile
-- [Welcome to the REST CookBook](https://restcookbook.com/), portail sur différents aspects de REST
-- [Zalando RESTful API and Event Guidelines](https://opensource.zalando.com/restful-api-guidelines/#)
-- [The stateless blog](https://blog.stateless.co/), de [Mike Kelly](https://blog.stateless.co/about) :
+- [Welcome to the REST CookBook](https://restcookbook.com/), portail sur différents aspects de REST, *How to do stuff RESTful*
+- [Zalando RESTful API and Event Guidelines](https://opensource.zalando.com/restful-api-guidelines/#), guide sur ce que votre API doit, devrait ou pourrait faire (must, should, may). Pour vous aider à placer le marqueur sans renoncer à construire un système hypermédia 
+- [The stateless blog](https://blog.stateless.co/), de [Mike Kelly](https://blog.stateless.co/about). Quelques billets intéressants :
   - [JSON Linking with HAL](https://blog.stateless.co/post/13296666138/json-linking-with-hal);
   - [The case for hyperlinks in APIs](https://blog.stateless.co/post/68259564511/the-case-for-hyperlinks-in-apis)
 - [Services web](https://fr.wikipedia.org/wiki/Service_web), très bon article Wikipédia sur les services web et les différentes architectures
