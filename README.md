@@ -16,7 +16,6 @@
     - [RFC (*Request For Comments*) intéressantes et utilisées](#rfc-request-for-comments-intéressantes-et-utilisées)
     - [Spécifications de structures de représentations/messages ou  *media types*](#spécifications-de-structures-de-représentationsmessages-ou--media-types)
     - [Sur la *sémantique* des hypermédias (vocabulaires, actions)](#sur-la-sémantique-des-hypermédias-vocabulaires-actions)
-    - [Spécification OpenAPI](#spécification-openapi)
 
 
 ## Démos
@@ -112,7 +111,7 @@ node server/app.js
 - [RFC3986: Uniform Resource Identifier (URI): Generic Syntax](https://www.rfc-editor.org/rfc/rfc3986.txt), T. Berners-Lee (W3C/MIT), R. Fielding (Day Software), L. Masinter (Adobe Systems)
 - [JSON Hypertext Application Language draft-kelly-json-hal-08](https://datatracker.ietf.org/doc/html/draft-kelly-json-hal-08#section-8.1), HAL representation pour les modèles de données. Une proposition de standard
 - [RFC 9068: JWT Profile for OAuth 2.0 Access Tokens](https://oauth.net/2/jwt-access-tokens/), la RFC du standard JWT
-- [RFC 9110: HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html), la RFC sur la sémantique du protocole HTTP (sémantique des verbes, headers, concepts). La source
+- [RFC 9110: HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html), la RFC sur **la sémantique du protocole HTTP** (sémantique des verbes, headers, concepts). La source
 
 
 ### Spécifications de structures de représentations/messages ou  *media types*
@@ -132,13 +131,3 @@ node server/app.js
 - [Microformats wiki](http://microformats.org/wiki/Main_Page), un wiki qui décrit des spécifications de structure de données interopérables:
 - [JSON-LD 1.1, A JSON-based Serialization for Linked Data](https://www.w3.org/TR/json-ld/), une spécification de représentation standardisée des données *soutenue et recommandée par le W3C*. Fait partie du projet *Hydra*. **Vocabulaire standardisé**
 - [Hydra Core Vocabularies](http://www.markus-lanthaler.com/hydra/spec/latest/core/), *soutenue et recommandée par le W3C* [Hydra](http://www.markus-lanthaler.com/hydra/) is an effort to simplify the development of interoperable, hypermedia-driven Web APIs. The two fundamental building blocks of Hydra are *JSON‑LD* and the *Hydra Core Vocabulary*. Décrit des ressources, leurs types et leurs propriétés, ainsi que les opérations (actions) qui peuvent être effectuées sur ces ressources. **Actions standardisées**
-
-
-### Spécification OpenAPI 
-
-OpenAPI est une description standardisée d'API. Elle ne s'intéresse pas à la sémantique des messages (vocabulaire, actions)
-
-- [OpenAPI Specification](https://spec.openapis.org/oas/latest.html), *The OpenAPI Specification (OAS)* defines a **standard**, programming language-agnostic interface **description** for HTTP APIs, which allows both humans and computers to discover and understand the capabilities of a service without requiring access to source code, additional documentation, or inspection of network traffic.[Swagger](https://swagger.io/) est **l'implémentation de cette spécification**.
-- [OpenAPI Specification v3.1.0](https://spec.openapis.org/oas/v3.1.0)
-- [What Is OpenAPI?](https://swagger.io/docs/specification/v3_0/about/)
-- [Dépôts des outils Swagger](https://github.com/swagger-api)
