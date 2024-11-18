@@ -1,5 +1,9 @@
+const fs = require('fs');
+
 const jsonwebtoken = require("jsonwebtoken");
-const SECRET = "mysecret";
+
+const SECRET = fs.readFileSync('private.key');
+
 const EXPIRATION = "1 day";
 
 //Déclarer un middleware qui vérifiera le jwt retourné par le client

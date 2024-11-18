@@ -1,4 +1,5 @@
 //Script pour générer une nouvelle clef secrete dans le fichier "private.key"
+//Pour admin du service, permet de faire une rotation de clef.
 const crypto = require('crypto');
 const fs = require('fs');
 
