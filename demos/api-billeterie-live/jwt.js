@@ -11,26 +11,21 @@ const EXPIRATION = "1 day";
 
 
 const extractBearerToken = headervalue => {
+
     if(typeof headervalue !== 'string'){
         return false;
     }
-    const matches = headervalue.match('/(bearer)\s+(\S+)/i');
+    const matches = headervalue.match(/(bearer)\s+(\S+)/i);
     return matches && matches[2];
 }
 
 
 const checkTokenMiddleware = (req, res, next) => {
 
-    //Recupere le jwt envoyé par le client
-
-
-
-
     //Le JWT est placé dans le header Authorization
-    // const token = req.headers.authorization;
-    // console.log(token);
-    // return;
-    console.log('Vérifier le jwt');
+    //Recupere le jwt envoyé par le client
+    const jwt  = req.headers.authorization && extractBearerToken(req.headers.authorization);
+    console.log(jwt);
     next();
 }
 
