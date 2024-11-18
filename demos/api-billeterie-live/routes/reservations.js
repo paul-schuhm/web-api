@@ -10,8 +10,8 @@ router.get(
   "/concerts/:id(\\d)+/reservations",
   checkTokenMiddleware,
   (req, res, next) => {
-    console.log("traitement de la requête");
-    res.send('A implementer...')
+    // console.log("traitement de la requête");
+    return res.send('A implementer...')
   }
 );
 
