@@ -1,17 +1,17 @@
 const jsonwebtoken = require("jsonwebtoken");
-const secret = "mysecret";
-const expiration = "1 day";
+const SECRET = "mysecret";
+const EXPIRATION = "1 day";
 
 //Déclarer un middleware qui vérifiera le jwt retourné par le client
 //Utiliser ce middleware sur toutes les routes protégées.
 
 /**
  * Retourne un jwt signé avec une date d'expiration
- * @param {*} login
+ * @param {*} login L'identifiant de l'utilisateur
  * @param {*} isAdmin
  * @returns
  */
-function createJWT(login, isAdmin, expiration = expiration) {
+function createJWT(login, isAdmin, expiration = EXPIRATION) {
   //Mettre le payload (données utiles à échanger entre client et serveufr)
   //Pas de données confidentielles dans le payload ! Le JWT n'est pas chiffré !
   return jsonwebtoken.sign(
@@ -19,7 +19,7 @@ function createJWT(login, isAdmin, expiration = expiration) {
       login: login,
       isAdmin: isAdmin,
     },
-    secret,
+    SECRET,
     {
       expiresIn: expiration,
     }

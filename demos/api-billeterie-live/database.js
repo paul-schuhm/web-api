@@ -1,5 +1,8 @@
 var bcrypt = require('bcrypt');
 
+//Salt pour le hashage des mots de passe
+const saltOrRounds = 5;
+
 //Les Modèles de données
 
 class Concert {
@@ -15,7 +18,6 @@ class Concert {
 
 class Reservation {}
 
-const saltOrRounds = 5;
 
 class User {
   constructor(pseudo, password = '', isAdmin = false){

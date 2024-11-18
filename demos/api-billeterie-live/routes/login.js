@@ -55,6 +55,7 @@ router.post("/login", (req, res, next) => {
         res.send(responseObject);
       },
     });
+    return;
   }
 
   //User est authentifié et admin: Génération d'un JSON Web Token
@@ -76,7 +77,7 @@ router.post("/login", (req, res, next) => {
     message: `Bienvenue ${login} !`,
   };
 
-  res.status(200).format({
+  return res.status(200).format({
     "application/hal+json": function () {
       res.send(responseObject);
     },
