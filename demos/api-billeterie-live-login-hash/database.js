@@ -13,16 +13,19 @@ class Concert {
   }
 }
 
+function hash(password){
+    const saltOrRounds = 10;
+    return bcrypt.hashSync(password, saltOrRounds);
+}
+
 class Reservation {}
 
-const saltOrRounds = 5;
-
 class User {
-  constructor(pseudo, password = '', isAdmin = false){
-    this.pseudo = pseudo;
-    //On conserve les mots de passe hashés
-    this.password = bcrypt.hashSync(password, saltOrRounds );
-    this.isAdmin = isAdmin
+  constructor(login, password = "", isAdmin = false) {
+    this.login = login;
+    //On hash le password
+    this.password = hash(password); 
+    this.isAdmin = isAdmin;
   }
 }
 
@@ -46,8 +49,7 @@ const concerts = [
   ),
 ];
 
-//On imagine que l'admin a lui même fourni les données
-const users = [new User('ed', 'astrongpassword', true)];
+const users = [new User("ed", "astrongpassword", true)];
 
 const reservations = [];
 

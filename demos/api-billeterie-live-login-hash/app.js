@@ -5,8 +5,7 @@ var logger = require('morgan');
 
 //Importe mon routeur de concerts
 var routerConcerts = require('./routes/concerts');
-//Importe mon router de login
-var routerLogin = require('./routes/login');
+var routerLogin = require ('./routes/login');
 
 var app = express();
 
@@ -17,6 +16,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Enregistrer le routeur des concerts
-app.use(routerConcerts, routerLogin);
+
+app.use(routerConcerts) ;
+app.use(routerLogin) ;
 
 module.exports = app;
