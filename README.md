@@ -3,7 +3,7 @@
 - [Développement API (web API/RESTful API)](#développement-api-web-apirestful-api)
   - [Démos](#démos)
     - [Démo *youtypeitwepostit*](#démo-youtypeitwepostit)
-    - [Démo du cours](#démo-du-cours)
+    - [Démos du cours](#démos-du-cours)
   - [Exercices et corrections](#exercices-et-corrections)
   - [Kit de démarrage complet pour développer son API](#kit-de-démarrage-complet-pour-développer-son-api)
   - [Outils](#outils)
@@ -34,7 +34,7 @@ Disponible sur [ce dépôt](https://github.com/RESTful-Web-APIs/example-code).
 node server/app.js
 ~~~
 
-### Démo du cours
+### Démos du cours
 
 - [Accéder aux démos JS/Node.js/Express.js](./demos/)
 - [Accéder à la démo architecture RPC vs ROA](./demos/demo-roa-vs-rpc/)
