@@ -41,5 +41,5 @@ Récupérer l'*acces token* (sous la clef `jwt`) et accéder à la ressource pro
 jwt=<le token récupéré après authentification>
 #Accéder à une ressource protégée
 curl -X GET $baseURL/concerts/1/reservations \
--H "Authorization: Berar $jwt"
+-H "Authorization: Bearer $jwt"
 ~~~
