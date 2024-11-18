@@ -24,8 +24,24 @@ const checkTokenMiddleware = (req, res, next) => {
 
     //Le JWT est placé dans le header Authorization
     //Recupere le jwt envoyé par le client
-    const jwt  = req.headers.authorization && extractBearerToken(req.headers.authorization);
-    console.log(jwt);
+    const token  = req.headers.authorization && extractBearerToken(req.headers.authorization);
+
+    //Si pas de jwt
+    if(!token){
+        return res.status(401).json({"msg" : "Vous n'êtes pas autorisé-e à accéder à cette ressource."})
+    }
+
+    //Vérification du jwt
+    jsonwebtoken.verify(token, SECRET, (err, decodedToken) => {
+
+        //La vérification a échoué
+        if(err){
+            res.status(401).json({"msg" : "Vous n'êtes pas autorisé-e à accéder à cette ressource."})
+        }
+
+        //La vérification a réussi !
+        console.log('TOKEN VERIFIE !')
+    })
     next();
 }
 
