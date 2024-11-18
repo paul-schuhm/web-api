@@ -17,7 +17,7 @@ const checkTokenMiddleware = (req, res, next) => {
     // const token = req.headers.authorization;
     // console.log(token);
     // return;
-
+    console.log('Vérifier le jwt');
     next();
 }
 
