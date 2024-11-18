@@ -3,8 +3,7 @@ var router = express.Router();
 var database = require("../database");
 var hal = require("../hal");
 var bcrypt = require("bcrypt");
-var jwt = require('../jwt')
-
+var jwt = require("../jwt");
 
 /**
  * Retourne vrai si l'user est authentifié par le système, faux sinon
@@ -12,7 +11,7 @@ var jwt = require('../jwt')
  * @param {*} password
  * @returnsbcrypt
  */
-function authenticate(login, password) {
+function isAuthentificated(login, password) {
   const user = database.users.find((user) => {
     //compareSync(password en clair, password hashé en base)
     return user.pseudo === login && bcrypt.compareSync(password, user.password);
@@ -38,54 +37,50 @@ function isAdmin(pseudo) {
 }
 
 router.post("/login", (req, res, next) => {
+
   const login = req.body.pseudo;
   const password = req.body.password;
 
-  if (authenticate(login, password)) {
-    if (!isAdmin(login, password)) {
-      //A completer avec une reponse propre
-      res.status(401).send("Go away !");
-      return;
-    }
+  const isAuthAsAdmin = isAuthentificated(login, password) && isAdmin(login);
 
-    //User est authentifié et admin: Génération d'un JSON Web Token
-    const accessToken = jwt.createJWT(login, true, '1 day');
-
-    //Si réussi, on va fournir un hypermédia JSON HAL (lien vers reservations pour un concert + access token)
-    let responseObject = {
-      _links: {
-        self: hal.halLinkObject("/login"),
-        //Indiquer au client les URL /concerts/1/reservations, /concerts/2/reservations, etc.
-        reservations: hal.halLinkObject(
-          "/concerts/{id}/reservations",
-          "string",
-          "",
-          true
-        ),
-      },
-      jwt: accessToken,
-      message: `Bienvenue ${login} !`,
-    };
-
-    res.status(200).format({
-      "application/hal+json": function () {
-        res.send(responseObject);
-      },
-    });
-  } else {
+  if (!isAuthAsAdmin) {
     let responseObject = {
       _links: {
         self: hal.halLinkObject("/login"),
       },
-      message: "Vos identifiants sont invalides. Merci de rééssayer.",
+      message: "Vous n'avez pas accès à cette ressource.",
     };
-    //Sinon, on retourne un message d'erreur
     res.status(401).format({
       "application/hal+json": function () {
         res.send(responseObject);
       },
     });
   }
+
+  //User est authentifié et admin: Génération d'un JSON Web Token
+  const accessToken = jwt.createJWT(login, true, "1 day");
+
+  //Si réussi, on va fournir un hypermédia JSON HAL (lien vers reservations pour un concert + access token)
+  let responseObject = {
+    _links: {
+      self: hal.halLinkObject("/login"),
+      //Indiquer au client les URL /concerts/1/reservations, /concerts/2/reservations, etc.
+      reservations: hal.halLinkObject(
+        "/concerts/{id}/reservations",
+        "string",
+        "",
+        true
+      ),
+    },
+    jwt: accessToken,
+    message: `Bienvenue ${login} !`,
+  };
+
+  res.status(200).format({
+    "application/hal+json": function () {
+      res.send(responseObject);
+    },
+  });
 });
 
 module.exports = router;
