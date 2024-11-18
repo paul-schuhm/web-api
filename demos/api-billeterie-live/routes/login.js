@@ -3,7 +3,7 @@ var router = express.Router();
 var database = require("../database");
 var hal = require("../hal");
 var bcrypt = require("bcrypt");
-var jsonwebtoken = require("jsonwebtoken");
+var jwt = require('../jwt')
 
 
 /**
@@ -24,7 +24,7 @@ function authenticate(login, password) {
 }
 
 function findUserByPseudo(pseudo) {
-  return users.find((user) => user.pseudo === pseudo);
+  return database.users.find((user) => user.pseudo === pseudo);
 }
 
 /**
@@ -48,10 +48,8 @@ router.post("/login", (req, res, next) => {
       return;
     }
 
-    //User est authentifié et admin
-
-    //Génération d'un JSON Web Token
-   
+    //User est authentifié et admin: Génération d'un JSON Web Token
+    const accessToken = jwt.createJWT(login, true, '1 day');
 
     //Si réussi, on va fournir un hypermédia JSON HAL (lien vers reservations pour un concert + access token)
     let responseObject = {
@@ -65,7 +63,7 @@ router.post("/login", (req, res, next) => {
           true
         ),
       },
-      jwt: "json web token à implémenter",
+      jwt: accessToken,
       message: `Bienvenue ${login} !`,
     };
 
