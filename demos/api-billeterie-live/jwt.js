@@ -10,9 +10,22 @@ const EXPIRATION = "1 day";
 //Utiliser ce middleware sur toutes les routes protégées.
 
 
+const extractBearerToken = headervalue => {
+    if(typeof headervalue !== 'string'){
+        return false;
+    }
+    const matches = headervalue.match('/(bearer)\s+(\S+)/i');
+    return matches && matches[2];
+}
+
+
 const checkTokenMiddleware = (req, res, next) => {
 
     //Recupere le jwt envoyé par le client
+
+
+
+
     //Le JWT est placé dans le header Authorization
     // const token = req.headers.authorization;
     // console.log(token);
