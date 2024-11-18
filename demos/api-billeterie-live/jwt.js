@@ -39,9 +39,11 @@ const checkTokenMiddleware = (req, res, next) => {
         .json({
           msg: "Vous n'êtes pas autorisé-e à accéder à cette ressource.",
         });
-
         return;
     }
+
+    //partager des données entre middlewares (utiliser propriété res.locals)
+    res.locals.decodedToken = decodedToken
     next();
   });
 };

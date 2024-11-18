@@ -11,6 +11,7 @@ router.get(
   checkTokenMiddleware,
   (req, res, next) => {
     // console.log("traitement de la requête");
+    console.log(res.locals.decodedToken)
     return res.send('A implementer...')
   }
 );
