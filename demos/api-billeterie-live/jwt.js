@@ -9,6 +9,19 @@ const EXPIRATION = "1 day";
 //Déclarer un middleware qui vérifiera le jwt retourné par le client
 //Utiliser ce middleware sur toutes les routes protégées.
 
+
+const checkTokenMiddleware = (req, res, next) => {
+
+    //Recupere le jwt envoyé par le client
+    //Le JWT est placé dans le header Authorization
+    // const token = req.headers.authorization;
+    // console.log(token);
+    // return;
+
+    next();
+}
+
+
 /**
  * Retourne un jwt signé avec une date d'expiration
  * @param {*} login L'identifiant de l'utilisateur
@@ -30,4 +43,4 @@ function createJWT(login, isAdmin, expiration = EXPIRATION) {
   );
 }
 
-module.exports = { createJWT };
+module.exports = { createJWT, checkTokenMiddleware };
