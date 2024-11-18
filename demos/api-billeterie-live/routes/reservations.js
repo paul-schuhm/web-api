@@ -5,14 +5,16 @@ var hal = require("../hal");
 var { checkTokenMiddleware } = require("../jwt");
 
 //Ressource protégée par authentification
-//Le middleware checkTokenMiddleware est appelé, puis celui qui est déclaré si next()
+
+//Le middleware checkTokenMiddleware est appelé avant (ordre de déclaration), 
+//le middleware en charge du traitement de la requête
 router.get(
   "/concerts/:id(\\d)+/reservations",
   checkTokenMiddleware,
   (req, res, next) => {
-    // console.log("traitement de la requête");
+    //Récupérer les données placées par le middleware précédent
     console.log(res.locals.decodedToken)
-    return res.send('A implementer...')
+    return res.send('À implementer !')
   }
 );
 

@@ -1,14 +1,15 @@
 const fs = require("fs");
-
 const jsonwebtoken = require("jsonwebtoken");
 
+//Paramètres du JWT
 const SECRET = fs.readFileSync("private.key");
-
 const EXPIRATION = "1 day";
 
-//Déclarer un middleware qui vérifiera le jwt retourné par le client
-//Utiliser ce middleware sur toutes les routes protégées.
-
+/**
+ * Retourne le jwt s'il est présent dans le header d'authorization
+ * @param {*} headervalue 
+ * @returns 
+ */
 const extractBearerToken = (headervalue) => {
   if (typeof headervalue !== "string") {
     return false;
@@ -17,6 +18,14 @@ const extractBearerToken = (headervalue) => {
   return matches && matches[2];
 };
 
+
+/**
+ * Middleware de 'guard', vérifie le token s'il est présent
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns 
+ */
 const checkTokenMiddleware = (req, res, next) => {
   //Le JWT est placé dans le header Authorization
   //Recupere le jwt envoyé par le client
@@ -44,6 +53,7 @@ const checkTokenMiddleware = (req, res, next) => {
 
     //partager des données entre middlewares (utiliser propriété res.locals)
     res.locals.decodedToken = decodedToken
+    //Passer au middleware suivant
     next();
   });
 };
