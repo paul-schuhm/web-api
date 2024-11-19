@@ -1,0 +1,64 @@
+services:
+  #La web API (node)
+  api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    labels:
+      - "autoheal=true"
+    develop:
+      watch:
+        - path: ./api/
+          action: sync
+          target: /usr/src/app
+    container_name: ${PROJECT_NAME}-api
+    ports:
+      - ${HOST_PORT_API}:3000
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+    healthcheck:
+        test: ["CMD", "mysqladmin", "-hdb", "-P3306", "ping", "--silent"]
+        interval: 5s
+        timeout: 5s
+        retries: 5 
+    # command: ["./node_modules/pm2/bin/pm2-runtime", "start", "./bin/www"]
+    command: "./node_modules/pm2/bin/pm2-runtime start bin/www --name webapi -i 4"
+  redis:
+    image: redis:7.4-alpine
+    restart: always
+    ports: 
+      - ${HOST_PORT_REDIS}:6379
+    command: redis-server --save 60 1 --loglevel warning
+    container_name: ${PROJECT_NAME}-redis
+  db:
+    image: mysql:8
+    restart: always
+    labels:
+      - "autoheal=true"    
+    environment:
+      - MYSQL_DATABASE=mydb
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./init/:/docker-entrypoint-initdb.d/
+      - ./dbdata:/var/lib/mysql
+    ports:
+      - ${HOST_PORT_DB}:3306
+    container_name: ${PROJECT_NAME}-db
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "--silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  adminer:
+    image: adminer
+    restart: always
+    depends_on:
+      - db
+    container_name: ${PROJECT_NAME}-adminer
+    ports:
+      - ${HOST_PORT_ADMINER}:8080

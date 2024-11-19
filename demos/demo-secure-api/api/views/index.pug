@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  h2 Jeu de données test issu de la base de données MySQL
+  ul
+    each user in users
+      li= user.firstName
+  p Si vous voyez cette page c'est que tout fonctionne !
+  ul
+    li Accéder à 
+      a(href='http://localhost:5003') Adminer.
+
+    li Accéder à 
+      a(href='/doc') La documentation Swagger.
+  
