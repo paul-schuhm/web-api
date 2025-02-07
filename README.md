@@ -39,7 +39,8 @@ node server/app.js
 - [Accéder aux démos JS/Node.js/Express.js](./demos/)
 - [Accéder à la démo architecture RPC vs ROA](./demos/demo-roa-vs-rpc/)
 - [Accéder à la démo JWT en *vanilla* PHP](https://github.com/paul-schuhm/demo-jwt)
-- [Accéder à la démo live de l'implémentation du service de billetterie de concets](./demos/api-billeterie-live/). Cette démo est "en l'état"
+- [Accéder à la démo live de l'implémentation du service de billetterie de concerts](./demos/api-billeterie-live/). Cette démo est "en l'état"
+- [Accéder à la démo de sécurisation du service (anti brute force sur login, gestionnaire de processus et autres)](./demos/demo-secure-api/)
 
 ## Exercices et corrections
 
