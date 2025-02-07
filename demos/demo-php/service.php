@@ -104,6 +104,16 @@ function list_users(): array
                     ],
                     [
                         "_links" => [
+                            'self' => '/users/3'
+                        ],
+                        'id' => 3,
+                        'firstName' => 'Steven',
+                        'lastName' => 'Nevets',
+                        'birthDate' => '30/09/2005',
+                        'role' => 'user'
+                    ],
+                    [
+                        "_links" => [
                             'self' => '/users/2'
                         ],
                         'id' => 2,
