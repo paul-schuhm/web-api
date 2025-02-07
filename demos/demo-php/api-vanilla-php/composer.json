@@ -1,0 +1,17 @@
+{
+    "name": "paul/demo-mvc-vanilla",
+    "autoload": {
+        "psr-4": {
+            "API\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "websealevel",
+            "email": "contact@websealevel.com"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^6.2"
+    }
+}
