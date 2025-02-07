@@ -135,7 +135,7 @@ if (isset(ROUTES[$method][$uri])) {
     //Execute => produit une réponse
     $response = $controler();
     //Ecrire des headers
-    header('Content-Type: application/json');
+    header('Content-Type: application/hal+json');
     //Ecrire le code HTTP
     http_response_code($response['code']);
     //Ecrire le body de la réponse (= écrire sur la sortie standard)
