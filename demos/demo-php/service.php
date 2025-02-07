@@ -77,22 +77,46 @@ function list_users(): array
     // dans un fichier, une base de données, auprès d'un autre service web.
     return [
         'code' => 200,
-        'content' => [
-            [
-                'id' => 1,
-                'firstName' => 'John',
-                'lastName' => 'Doe',
-                'birthDate' => '01/01/1977',
-                'role' => 'user'
-            ],
-            [
-                'id' => 2,
-                'firstName' => 'Jane',
-                'lastName' => 'Doe',
-                'birthDate' => '05/05/1976',
-                'role' => 'user'
-            ]
 
+        //Spécification HAL : @see https://datatracker.ietf.org/doc/html/draft-kelly-json-hal-06
+
+        //Réponse
+        'content' => [
+
+            '_links' => [
+                "home" => '/',
+                "self" => '/users'
+            ],
+
+            '_embedded' => [
+
+                "users" => [
+
+                    [
+                        "_links" => [
+                            'self' => '/users/1'
+                        ],
+                        'id' => 1,
+                        'firstName' => 'John',
+                        'lastName' => 'Doe',
+                        'birthDate' => '01/01/1977',
+                        'role' => 'user'
+                    ],
+                    [
+                        "_links" => [
+                            'self' => '/users/2'
+                        ],
+                        'id' => 2,
+                        'firstName' => 'Jane',
+                        'lastName' => 'Doe',
+                        'birthDate' => '05/05/1976',
+                        'role' => 'user'
+                    ]
+                ]
+            ],
+
+            //Données propres à la liste (état de la liste)
+            'total' => 2,
         ]
     ];
 }
