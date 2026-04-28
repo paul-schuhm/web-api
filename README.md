@@ -120,7 +120,7 @@ node server/app.js
 
 - [*HAL*](http://amundsen.com/hypermedia/), les différents types d'hypermédia définis pour le protocole HTTP et pour construire des API plus robustes. Le livre de l'auteur [Building Hypermedia APIs with HTML5 and Node](https://learning.oreilly.com/library/view/building-hypermedia-apis/9781449309497/), Amundsen, a l'air très intéressant;
 - [SIREN](https://github.com/kevinswiber/siren#siren-a-hypermedia-specification-for-representing-entities),
-- [Collection+JSON](http://amundsen.com/media-types/collection/)
+- [Collection+JSON](https://github.com/collection-json/spec)
 - [IANA Media Types Registry](https://www.iana.org/assignments/media-types/media-types.xhtml), liste de formats sérieux, recensés par l'[IANA](https://fr.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority). Si vous cherchez un format pour les réponses de votre service vous pouvez parcourir cette liste.
 
 <!-- - [HAL Explorer](https://github.com/toedter/hal-explorer), with HAL Explorer you can browse and explore HAL and HAL-FORMS based RESTful Hypermedia APIs. HAL Explorer was inspired by Mike Kelly’s HAL-Browser. HAL Explorer also supports Spring Profiles. -->
