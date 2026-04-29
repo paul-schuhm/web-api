@@ -14,7 +14,7 @@
     - [Articles sur le web, les systèmes hypertextes et les services RESTful](#articles-sur-le-web-les-systèmes-hypertextes-et-les-services-restful)
     - [Sur le cache HTTP](#sur-le-cache-http)
     - [RFC (*Request For Comments*) intéressantes et utilisées](#rfc-request-for-comments-intéressantes-et-utilisées)
-    - [Spécifications de structures de représentations/messages, *media types*](#spécifications-de-structures-de-représentationsmessages-media-types)
+    - [Spécifications de représentation structurée des ressources/hypermédias (*media types*)](#spécifications-de-représentation-structurée-des-ressourceshypermédias-media-types)
     - [Sur la *sémantique* des hypermédias (vocabulaires, actions)](#sur-la-sémantique-des-hypermédias-vocabulaires-actions)
 
 
@@ -118,7 +118,7 @@ node server/app.js
 - [RFC 9110: HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html), la RFC sur **la sémantique du protocole HTTP** (sémantique des verbes, headers, concepts). La source
 
 
-### Spécifications de structures de représentations/messages, *media types*
+### Spécifications de représentation structurée des ressources/hypermédias (*media types*)
 
 - HTML !
 - [Atom](https://datatracker.ietf.org/doc/html/rfc4287), media type pour la syndication de contenu (évolution de RSS)
