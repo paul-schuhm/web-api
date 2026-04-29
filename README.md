@@ -14,7 +14,7 @@
     - [Articles sur le web, les systèmes hypertextes et les services RESTful](#articles-sur-le-web-les-systèmes-hypertextes-et-les-services-restful)
     - [Sur le cache HTTP](#sur-le-cache-http)
     - [RFC (*Request For Comments*) intéressantes et utilisées](#rfc-request-for-comments-intéressantes-et-utilisées)
-    - [Spécifications de structures de représentations/messages ou  *media types*](#spécifications-de-structures-de-représentationsmessages-ou--media-types)
+    - [Spécifications de structures de représentations/messages, *media types*](#spécifications-de-structures-de-représentationsmessages-media-types)
     - [Sur la *sémantique* des hypermédias (vocabulaires, actions)](#sur-la-sémantique-des-hypermédias-vocabulaires-actions)
 
 
@@ -69,6 +69,8 @@ node server/app.js
 ### Ouvrages
 
 <img src="./assets/RESTful Web Services.jpeg" height=200><img src="./assets/restful-wep-api.png" height=200><img src="./assets/recipes.png" height=200>
+<img src="./assets/Building Hypermedia APIs with HTML5 and Node.jpeg" height=200>
+
 
 - [RESTful Web Services](https://learning.oreilly.com/library/view/restful-web-services/9780596529260/), de Leonard Richardson, Sam Ruby, O'Reilly, 2007 **S'il y a un livre à lire/étudier/feuilleter/avoir c'est celui-ci, must have**. Il commence à dater mais reste très profond et intéressant. Ce livre est passé sous licence Creative Commons dans le cadre du projet [O'Reilly Open Books](https://www.oreilly.com/openbook/). [Accéder à la version en ligne/PDF gratuite](http://restfulwebapis.org/rws.html) **LP++**
 - [RESTful Web APIs](https://learning.oreilly.com/library/view/restful-web-apis/9781449359713/), de Leonard Richardson, Mike Amundsen, Sam Ruby, O'Reilly, 2013. Une version actualisée, rafraîchie de *RESTful Web Services*; **LP++**
@@ -77,7 +79,7 @@ node server/app.js
 - [RESTful Web Clients](https://www.oreilly.com/library/view/restful-web-clients/9781491921890/), de Mike Amundsen, O'Reilly, 2017. **LE++**
 - [REST API Development with Node.js : Manage and Understand the Full Capabilities of Successful REST Development, 2nd Edition](https://learning.oreilly.com/library/view/rest-api-development/9781484237151/), de Fernando Doglio, Apress, 2018
 - [Bien architecturer une application REST](https://www.eyrolles.com/Informatique/Livre/bien-architecturer-une-application-rest-9782212850154/), par Olivier Gutknecht, avec la contribution de Jean Zundel, Eyrolles, 2009
-
+- [Building Hypermedia APIs with HTML5 and Node](https://www.oreilly.com/library/view/building-hypermedia-apis/9781449309497/), de Mike Amundsen, publié chez O'Reilly, 2011
 
 ### Conférences (YouTube)
 
@@ -116,20 +118,22 @@ node server/app.js
 - [RFC 9110: HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html), la RFC sur **la sémantique du protocole HTTP** (sémantique des verbes, headers, concepts). La source
 
 
-### Spécifications de structures de représentations/messages ou  *media types*
+### Spécifications de structures de représentations/messages, *media types*
 
-- [*HAL*](http://amundsen.com/hypermedia/), les différents types d'hypermédia définis pour le protocole HTTP et pour construire des API plus robustes. Le livre de l'auteur [Building Hypermedia APIs with HTML5 and Node](https://learning.oreilly.com/library/view/building-hypermedia-apis/9781449309497/), Amundsen, a l'air très intéressant;
-- [SIREN](https://github.com/kevinswiber/siren#siren-a-hypermedia-specification-for-representing-entities),
+- HTML !
+- [Atom](https://datatracker.ietf.org/doc/html/rfc4287), media type pour la syndication de contenu (évolution de RSS)
+- [HAL](https://stateless.co/hal_specification.html), un media type simple et structuré, utilisé comme base pour construire d'autres spécifications. [Voir la spécification](https://datatracker.ietf.org/doc/html/draft-kelly-json-hal-08#section-8.1)
+- [HAL-FORMS](http://rwcbook.com/hal-forms/), évolution de HAL plus complet spécifiant les formulaires, workflows, etc. Piloté par Mike Amundsen
+- [SIREN](https://github.com/kevinswiber/siren#siren-a-hypermedia-specification-for-representing-entities)
 - [Collection+JSON](https://github.com/collection-json/spec)
-- [IANA Media Types Registry](https://www.iana.org/assignments/media-types/media-types.xhtml), liste de formats sérieux, recensés par l'[IANA](https://fr.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority). Si vous cherchez un format pour les réponses de votre service vous pouvez parcourir cette liste.
+- [JSON-LD](https://www.w3.org/TR/json-ld/), une spécification de représentation standardisée des données *soutenue et recommandée par le W3C*. Fait partie du projet *Hydra* et utilise [Hydra Core Vocabularies](https://www.markus-lanthaler.com/hydra/spec/latest/core/). Se concentre sur le sens des données et les liens. [Implémentation de RDF](https://fr.wikipedia.org/wiki/Resource_Description_Framework). Utilisé par défaut par exemple par le framework [API Platform](https://api-platform.com/)
 
-<!-- - [HAL Explorer](https://github.com/toedter/hal-explorer), with HAL Explorer you can browse and explore HAL and HAL-FORMS based RESTful Hypermedia APIs. HAL Explorer was inspired by Mike Kelly’s HAL-Browser. HAL Explorer also supports Spring Profiles. -->
+[IANA Media Types Registry](https://www.iana.org/assignments/media-types/media-types.xhtml), liste de formats sérieux, recensés par l'[IANA](https://fr.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority). Si vous cherchez un format pour implémenter un service hypermédia, vous pouvez parcourir cette liste.
 
 
 ### Sur la *sémantique* des hypermédias (vocabulaires, actions)
 
-- [Resource Description Framework](https://fr.wikipedia.org/wiki/Resource_Description_Framework), a pour but de décrire formellement les ressources Web et leurs métadonnées, afin de permettre le traitement automatique de ces descriptions. Développé par le W3C, RDF est le langage de base du [Web sémantique](https://fr.wikipedia.org/wiki/Web_s%C3%A9mantique); 
 - [Schema.org](https://schema.org/), *Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for *structured data* on the Internet*. Propose une liste de **vocabulaires standardisés** à suivre pour différents modèles de données;
 - [Microformats wiki](http://microformats.org/wiki/Main_Page), un wiki qui décrit des spécifications de structure de données interopérables:
-- [JSON-LD 1.1, A JSON-based Serialization for Linked Data](https://www.w3.org/TR/json-ld/), une spécification de représentation standardisée des données *soutenue et recommandée par le W3C*. Fait partie du projet *Hydra*. **Vocabulaire standardisé**
 - [Hydra Core Vocabularies](http://www.markus-lanthaler.com/hydra/spec/latest/core/), *soutenue et recommandée par le W3C* [Hydra](http://www.markus-lanthaler.com/hydra/) is an effort to simplify the development of interoperable, hypermedia-driven Web APIs. The two fundamental building blocks of Hydra are *JSON‑LD* and the *Hydra Core Vocabulary*. Décrit des ressources, leurs types et leurs propriétés, ainsi que les opérations (actions) qui peuvent être effectuées sur ces ressources. **Actions standardisées**
+- [Resource Description Framework](https://fr.wikipedia.org/wiki/Resource_Description_Framework), a pour but de décrire formellement les ressources Web et leurs métadonnées, afin de permettre le traitement automatique de ces descriptions. Développé par le W3C, RDF est le langage de base du [Web sémantique](https://fr.wikipedia.org/wiki/Web_s%C3%A9mantique); 
